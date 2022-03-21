@@ -1,0 +1,1 @@
+export const includeFastDelivery = data => data.filter(item => item.fastDelivery);

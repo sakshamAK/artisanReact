@@ -1,0 +1,41 @@
+body {
+    color: #1e1e1e;
+}
+
+.categ-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.card1 {
+    width: 12rem;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.categ-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8rem;
+    gap: 2rem;
+}
+
+.categ-container h1,
+.categ-container h3,
+.categ-container h4  {
+    margin: 0.5rem -1rem;
+}
+
+.authorprice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: -0.5rem -1rem;
+}
+
+.authorprice span:first-child {
+    color: gray;
+    font-size: 0.8rem;
+}
