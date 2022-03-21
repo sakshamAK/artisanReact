@@ -121,7 +121,9 @@ export const products = [
     type: "LAYERING ART",
     inStock: false,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -133,7 +135,9 @@ export const products = [
     type: "LAYERING ART",
     inStock: true,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 4,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -145,7 +149,9 @@ export const products = [
     type: "SHADOW BOX",
     inStock: true,
     fastDelivery: false,
-    onSale: true
+    onSale: true,
+    starRatings: 1,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -157,7 +163,9 @@ export const products = [
     type: "QUILLING",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -169,7 +177,9 @@ export const products = [
     type: "3D ORIGAMI",
     inStock: true,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 4,
+    mountType: "Floor"
   },
   {
     _id: uuid(),
@@ -181,7 +191,9 @@ export const products = [
     type: "SHADOW BOX",
     inStock: true,
     fastDelivery: false,
-    onSale: true
+    onSale: true,
+    starRatings: 1,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -193,7 +205,9 @@ export const products = [
     type: "QUILLING",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Wall"
   },  
   {
     _id: uuid(),
@@ -205,7 +219,9 @@ export const products = [
     type: "PAPER CUTTING",
     inStock: true,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Ceiling"
   },
   {
     _id: uuid(),
@@ -217,7 +233,9 @@ export const products = [
     type: "ORIGAMI",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 4,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -229,7 +247,9 @@ export const products = [
     type: "QUILLING",
     inStock: false,
     fastDelivery: false,
-    onSale: true
+    onSale: true,
+    starRatings: 5,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -241,7 +261,9 @@ export const products = [
     type: "LAYERING ART",
     inStock: true,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 2,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -253,7 +275,9 @@ export const products = [
     type: "LAYERING ART",
     inStock: true,
     fastDelivery: false,
-    onSale: true
+    onSale: true,
+    starRatings: 5,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -265,7 +289,9 @@ export const products = [
     type: "SHADOW BOX",
     inStock: true,
     fastDelivery: false,
-    onSale: true
+    onSale: true,
+    starRatings: 5,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -277,7 +303,9 @@ export const products = [
     type: "QUILLING",
     inStock: true,
     fastDelivery: true,
-    onSale: true
+    onSale: true,
+    starRatings: 2,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -289,7 +317,9 @@ export const products = [
     type: "3D ORIGAMI",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Floor"
   },
   {
     _id: uuid(),
@@ -301,7 +331,9 @@ export const products = [
     type: "SHADOW BOX",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -313,7 +345,9 @@ export const products = [
     type: "QUILLING",
     inStock: false,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Wall"
   },  
   {
     _id: uuid(),
@@ -325,7 +359,9 @@ export const products = [
     type: "PAPER CUTTING",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 3,
+    mountType: "Ceiling"
   },
   {
     _id: uuid(),
@@ -337,7 +373,9 @@ export const products = [
     type: "ORIGAMI",
     inStock: true,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -349,7 +387,9 @@ export const products = [
     type: "QUILLING",
     inStock: true,
     fastDelivery: false,
-    onSale: true
+    onSale: true,
+    starRatings: 5,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -361,7 +401,9 @@ export const products = [
     type: "LAYERING ART",
     inStock: false,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -373,7 +415,9 @@ export const products = [
     type: "LAYERING ART",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 3,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -385,7 +429,9 @@ export const products = [
     type: "SHADOW BOX",
     inStock: true,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -397,7 +443,9 @@ export const products = [
     type: "QUILLING",
     inStock: false,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 4,
+    mountType: "Wall"
   },
   {
     _id: uuid(),
@@ -409,7 +457,9 @@ export const products = [
     type: "3D ORIGAMI",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Floor"
   },
   {
     _id: uuid(),
@@ -421,7 +471,9 @@ export const products = [
     type: "SHADOW BOX",
     inStock: true,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -433,7 +485,9 @@ export const products = [
     type: "QUILLING",
     inStock: false,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 3,
+    mountType: "Wall"
   },  
   {
     _id: uuid(),
@@ -445,7 +499,9 @@ export const products = [
     type: "PAPER CUTTING",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 5,
+    mountType: "Ceiling"
   },
   {
     _id: uuid(),
@@ -457,7 +513,9 @@ export const products = [
     type: "ORIGAMI",
     inStock: false,
     fastDelivery: true,
-    onSale: false
+    onSale: false,
+    starRatings: 4,
+    mountType: "Table Top"
   },
   {
     _id: uuid(),
@@ -469,7 +527,9 @@ export const products = [
     type: "QUILLING",
     inStock: true,
     fastDelivery: false,
-    onSale: false
+    onSale: false,
+    starRatings: 3,
+    mountType: "Wall"
   },
 ];
 

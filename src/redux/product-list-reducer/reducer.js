@@ -95,16 +95,16 @@ export const reducer = (state, { type, payload }) => {
 
         //mount type
         case WALL:
-            return { ...state, wall: payload }
+            return { ...state, mountType: {...state.mountType, wall: payload }}
 
         case TABLE_TOP:
-            return { ...state, tableTop: payload }
+            return { ...state, mountType: {...state.mountType, tableTop: payload }}
 
         case CEILING:
-            return { ...state, ceiling: payload }
+            return { ...state, mountType: {...state.mountType, ceiling: payload }}
 
         case FLOOR:
-            return { ...state, floor: payload }
+            return { ...state, mountType: {...state.mountType, floor: payload }}
 
 
         //color filter

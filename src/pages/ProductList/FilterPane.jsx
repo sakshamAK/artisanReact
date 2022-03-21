@@ -1,7 +1,6 @@
 import React from 'react'
-import { useAPI } from '../../contexts/APIContext/APIContext';
 import { useProduct } from '../../contexts/ProductListingContext/ProductListingContext';
-import { fastDelivery, itemsOnSale, onlyItemsWith3dOrigami, onlyItemsWithkirigami, onlyItemsWithLayeringArt, onlyItemsWithMiniatures, onlyItemsWithOrigami, onlyItemsWithPaperCuttings, onlyItemsWithQuilling, onlyItemsWithShadowBox, outOfStock, rangedData, sortHTL, sortLTH } from '../../redux/product-list-reducer/action';
+import { belowThreeStars, ceilingMount, fastDelivery, fiveStars, floorMount, fourStars, itemsOnSale, onlyItemsWith3dOrigami, onlyItemsWithkirigami, onlyItemsWithLayeringArt, onlyItemsWithMiniatures, onlyItemsWithOrigami, onlyItemsWithPaperCuttings, onlyItemsWithQuilling, onlyItemsWithShadowBox, outOfStock, rangedData, sortHTL, sortLTH, tableTopMount, threeStars, wallMount } from '../../redux/product-list-reducer/action';
 import styles from "./ProductList.module.css"
 
 export const FilterPane = () => {
@@ -77,38 +76,38 @@ export const FilterPane = () => {
             <h4>RATINGS</h4>
             <ul>
                 <li>
-                    <input type="radio" name="ratings" id="5star" onClick={ () => dispatch() } />
-                    <label for="5star"> 5 Stars</label>
+                    <input type="radio" name="ratings" id="5star" onClick={ () => dispatch(fiveStars()) } />
+                    <label for="5star"> 5 Stars &amp; below</label>
                 </li>
                 <li>
-                    <input type="radio" name="ratings" id="4star" onClick={ () => dispatch() } />
-                    <label for="4star"> 4 Stars</label>
+                    <input type="radio" name="ratings" id="4star" onClick={ () => dispatch(fourStars()) } />
+                    <label for="4star"> 4 Stars &amp; below</label>
                 </li>
                 <li>
-                    <input type="radio" name="ratings" id="3star" onClick={ () => dispatch() } />
-                    <label for="3star"> 3 Stars</label>
+                    <input type="radio" name="ratings" id="3star" onClick={ () => dispatch(threeStars()) } />
+                    <label for="3star"> 3 Stars &amp; below</label>
                 </li>
                 <li>
-                    <input type="radio" name="ratings" id="2-1star" onClick={ () => dispatch() } />
+                    <input type="radio" name="ratings" id="2-1star" onClick={ () => dispatch(belowThreeStars()) } />
                     <label for="2-1star"> Below 3 Stars</label>
                 </li>
             </ul>
             <h4>MOUNT TYPE</h4>
             <ul>
                 <li>
-                    <input type="checkbox" name="mount-type" id="walls" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="mount-type" id="walls" onClick={ e => dispatch(wallMount(e.target.checked)) } />
                     <label for="walls"> Wall</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="mount-type" id="table-top" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="mount-type" id="table-top" onClick={ e => dispatch(tableTopMount(e.target.checked)) } />
                     <label for="table-top"> Table Top</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="mount-type" id="ceiling" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="mount-type" id="ceiling" onClick={ e => dispatch(ceilingMount(e.target.checked)) } />
                     <label for="ceiling"> Ceiling</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="mount-type" id="floor" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="mount-type" id="floor" onClick={ e => dispatch(floorMount(e.target.checked)) } />
                     <label for="floor"> Floor</label>
                 </li>
             </ul>
