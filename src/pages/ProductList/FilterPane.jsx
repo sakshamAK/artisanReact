@@ -22,7 +22,7 @@ export const FilterPane = () => {
                 </li>
             </ul>
             <h4>PRICE RANGE</h4>
-            <input type="range" list="tickmark" min="300" max="3000" step="200" onChange={ e => dispatch(rangedData(e.target.value)) } />
+            <input type="range" list="tickmark" min="300" max="3100" step="200" onChange={ e => dispatch(rangedData(e.target.value)) } />
             <datalist id="tickmark">
                 <option value="300" label="300" />
                 <option value="500" />
@@ -38,6 +38,7 @@ export const FilterPane = () => {
                 <option value="2500" />
                 <option value="2700" />
                 <option value="2900" />
+                <option value="3100" />
               </datalist>
               <p className = {`${styles.rangeNum}`}><span>300</span><span>3000</span></p>
             <h4>AVAILABILITY</h4>
