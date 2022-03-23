@@ -26,7 +26,7 @@ import {
     RED,
     BLUE,
     BIEGE
-} from "./action-types"
+} from "./index"
 
 export const reducer = (state, { type, payload }) => {
     switch (type) {
@@ -95,33 +95,33 @@ export const reducer = (state, { type, payload }) => {
 
         //mount type
         case WALL:
-            return { ...state, wall: payload }
+            return { ...state, mountType: {...state.mountType, wall: payload }}
 
         case TABLE_TOP:
-            return { ...state, tableTop: payload }
+            return { ...state, mountType: {...state.mountType, tableTop: payload }}
 
         case CEILING:
-            return { ...state, ceiling: payload }
+            return { ...state, mountType: {...state.mountType, ceiling: payload }}
 
         case FLOOR:
-            return { ...state, floor: payload }
+            return { ...state, mountType: {...state.mountType, floor: payload }}
 
 
         //color filter
         case WHITE:
-            return { ...state, white: payload }
+            return { ...state, color: {...state.color, white: payload } }
 
         case YELLOW:
-            return  { ...state, yellow: payload }
+            return  { ...state, color: {...state.color, yellow: payload }}
 
         case RED:
-            return { ...state, red: payload }
+            return { ...state, color: {...state.color, red: payload }}
 
         case BLUE:
-            return { ...state, blue: payload }
+            return { ...state, color: {...state.color, blue: payload }}
 
         case BIEGE:
-            return { ...state, biege: payload }
+            return { ...state, color: {...state.color, biege: payload }}
 
         default: return state
     }

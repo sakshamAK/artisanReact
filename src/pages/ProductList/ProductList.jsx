@@ -2,7 +2,7 @@ import React from 'react'
 import { Fragment } from 'react'
 import { useAPI } from '../../contexts/APIContext/APIContext';
 import { useProduct } from '../../contexts/ProductListingContext/ProductListingContext';
-import { filteredData } from '../../redux/product-list-reducer/action';
+import { filteredData } from '../../redux/product-list-reducer/';
 import { FilterPane } from './FilterPane';
 import styles from "./ProductList.module.css"
 

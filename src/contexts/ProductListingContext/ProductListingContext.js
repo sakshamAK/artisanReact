@@ -1,10 +1,11 @@
 import { createContext, useContext, useReducer } from "react";
-import { reducer } from "../../redux/product-list-reducer/reducer";
+import { reducer } from "../../redux/product-list-reducer/";
 
 const ProductContext = createContext(null);
 
 const useProduct = () => useContext(ProductContext);
 
+//Initial state for reducer
 const initState = {
     sortByPrice: "",
     range: 5000,
@@ -38,6 +39,7 @@ const initState = {
 }
 
 const ProductProvider = ({ children }) => {
+
     const [ state, dispatch ] = useReducer(reducer, initState)
     return (
         <ProductContext.Provider value = {{ state, dispatch }}>

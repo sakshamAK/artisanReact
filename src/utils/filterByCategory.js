@@ -10,3 +10,7 @@ export const filterByLayeringArt = data => data.filter(item => item.type === "LA
 export const filterByOrigami = data => data.filter(item => item.type === "ORIGAMI")
 
 export const filterByKirigami = data => data.filter(item => item.type === "KIRIGAMI")
+
+export const filterByOrigami3d = data => data.filter(item => item.type === "3D ORIGAMI")
+
+export const filterByMiniatures = data => data.filter(item => item.type === "MINIATURES")

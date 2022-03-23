@@ -23,12 +23,30 @@ const APIProvider = ({ children }) => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        (async () => setProducts(await getProducts()))();
-        (async () => setCategories(await getCategories()))();
+
+        (async () => {
+            try {
+                setProducts(await getProducts())
+            }
+
+            catch (e) {
+                console.log(e.message)
+            }
+        })();
+
+        (async () => {
+            try {
+                setCategories(await getCategories())
+            }
+
+            catch (e) {
+                console.log(e.message)
+            }
+        })();
     }, [])
     console.log("procuts", products)
     return (
-        <APIContext.Provider value={ {categories, products} }>
+        <APIContext.Provider value={{ categories, products }}>
             {children}
         </APIContext.Provider>
     )
