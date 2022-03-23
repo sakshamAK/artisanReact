@@ -44,7 +44,6 @@ const APIProvider = ({ children }) => {
             }
         })();
     }, [])
-    console.log("procuts", products)
     return (
         <APIContext.Provider value={{ categories, products }}>
             {children}

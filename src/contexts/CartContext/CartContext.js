@@ -8,6 +8,7 @@ const useCart = () => useContext(CartContext);
 const initState = {
     quantity: 0,
     totalPrice: 0,
+    discount: 0,
     mycart: [],
     wishlist: []
 };

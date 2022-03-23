@@ -1,7 +1,10 @@
 import React from 'react'
 import { Fragment } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useAPI } from '../../contexts/APIContext/APIContext';
+import { useCart } from '../../contexts/CartContext/CartContext';
 import { useProduct } from '../../contexts/ProductListingContext/ProductListingContext';
+import { addToCart } from '../../redux/cart-reducer/action';
 import { filteredData } from '../../redux/product-list-reducer/';
 import { FilterPane } from './FilterPane';
 import styles from "./ProductList.module.css"
@@ -9,7 +12,9 @@ import styles from "./ProductList.module.css"
 
 export const ProductList = () => {
     const { products, categories } = useAPI();
-    const { state } = useProduct()
+    const { state: productState } = useProduct()
+    const { state: cartState, dispatch } = useCart();
+    const navigate = useNavigate();
     return (
         <Fragment>
             <div className={`${styles.coverImg}`}>
@@ -21,7 +26,7 @@ export const ProductList = () => {
                 <div className={`${styles.bodyPane}`}>
                     <h1>{categories[2]?.categoryName}</h1>
                     <div className={`${styles.itemsList}`}>
-                        {filteredData(state, products)?.map(({ imgSrc, title, type, price, inStock, fastDelivery, onSale }) => (
+                        {filteredData(productState, products)?.map(({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount }) => (
                             <div className={`${styles.card1} card ecom`}>
                                 <div className="badge-h">
                                     <i className="material-icons">favorite_border</i>
@@ -32,10 +37,10 @@ export const ProductList = () => {
                                     <p className="prod-cate">{type}</p>
                                     <h4 className={`${styles.prodTitle} prod-head`}>{title}</h4>
                                     {!inStock && <p className = {`${styles.itemNotAvailable} prod-cate`}>OUT OF STOCK</p>}
-                                    <p className="prod-det">Rs.{price} <span>Rs.{price} </span></p>
+                                    <p className="prod-det">Rs.{ discount } <span>Rs.{ price } </span></p>
                                     {fastDelivery && <p className = {`${styles.itemAvailable} prod-cate`}>FAST DELIVERY</p>}
                                     {onSale && <p className = {`${styles.itemAvailable} prod-cate`}>ON SALE</p>}
-                                    <div className="btn primary">Buy Now</div>
+                                    <div className="btn primary" onClick = { () => cartState.mycart.find(item => item._id === _id) ? navigate("/cart") : dispatch(addToCart({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount })) }>Buy Now</div>
                                 </div>
                             </div>
                         ))}

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { useState } from 'react';
-import { CardsList } from '../Components/CardsList.js/CardsList';
-import { GridDisplay } from '../Components/GridCardDisplay/GridDisplay';
+import { CardsList } from '../Components/';
+import { GridDisplay } from '../Components/';
 import styles from "./Home.module.css"
 
 export const Home = () => {
