@@ -77,3 +77,10 @@
     color: var(--success);
     font-weight: 900;
 }
+
+.rangeNum {
+    display: flex;
+    justify-content: space-between;
+    margin-top:-1rem;
+    font-size: 0.8rem;
+}

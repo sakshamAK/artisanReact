@@ -1,6 +1,6 @@
 import React from 'react'
 import { useProduct } from '../../contexts/ProductListingContext/ProductListingContext';
-import { belowThreeStars, ceilingMount, fastDelivery, fiveStars, floorMount, fourStars, itemsOnSale, onlyItemsWith3dOrigami, onlyItemsWithkirigami, onlyItemsWithLayeringArt, onlyItemsWithMiniatures, onlyItemsWithOrigami, onlyItemsWithPaperCuttings, onlyItemsWithQuilling, onlyItemsWithShadowBox, outOfStock, rangedData, sortHTL, sortLTH, tableTopMount, threeStars, wallMount } from '../../redux/product-list-reducer/action';
+import { belowThreeStars, ceilingMount, colorBiege, colorBlue, colorRed, colorWhite, colorYellow, fastDelivery, fiveStars, floorMount, fourStars, itemsOnSale, onlyItemsWith3dOrigami, onlyItemsWithkirigami, onlyItemsWithLayeringArt, onlyItemsWithMiniatures, onlyItemsWithOrigami, onlyItemsWithPaperCuttings, onlyItemsWithQuilling, onlyItemsWithShadowBox, outOfStock, rangedData, sortHTL, sortLTH, tableTopMount, threeStars, wallMount } from '../../redux/product-list-reducer/';
 import styles from "./ProductList.module.css"
 
 export const FilterPane = () => {
@@ -22,7 +22,24 @@ export const FilterPane = () => {
                 </li>
             </ul>
             <h4>PRICE RANGE</h4>
-            <input type="range" list="tickmark" min="300" max="3000" step="100" onChange={ e => dispatch(rangedData(e.target.value)) } />
+            <input type="range" list="tickmark" min="300" max="3000" step="200" onChange={ e => dispatch(rangedData(e.target.value)) } />
+            <datalist id="tickmark">
+                <option value="300" label="300" />
+                <option value="500" />
+                <option value="700" />
+                <option value="900" />
+                <option value="1100" />
+                <option value="1300" />
+                <option value="1500" />
+                <option value="1700" />
+                <option value="1900" />
+                <option value="2100" />
+                <option value="2300" />
+                <option value="2500" />
+                <option value="2700" />
+                <option value="2900" />
+              </datalist>
+              <p className = {`${styles.rangeNum}`}><span>300</span><span>3000</span></p>
             <h4>AVAILABILITY</h4>
             <ul>
                 <li>
@@ -114,23 +131,23 @@ export const FilterPane = () => {
             <h4>COLOR</h4>
             <ul>
                 <li>
-                    <input type="checkbox" name="color-type" id="white" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="color-type" id="white" onClick={ e => dispatch(colorWhite(e.target.checked)) } />
                     <label for="white"> White</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="color-type" id="yellow" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="color-type" id="yellow" onClick={ e => dispatch(colorYellow(e.target.checked)) } />
                     <label for="yellow"> yellow</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="color-type" id="red" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="color-type" id="red" onClick={ e => dispatch(colorRed(e.target.checked)) } />
                     <label for="red"> Red</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="color-type" id="blue" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="color-type" id="blue" onClick={ e => dispatch(colorBlue(e.target.checked)) } />
                     <label for="blue"> Blue</label>
                 </li>
                 <li>
-                    <input type="checkbox" name="color-type" id="biege" onClick={ () => dispatch() } />
+                    <input type="checkbox" name="color-type" id="biege" onClick={ e => dispatch(colorBiege(e.target.checked)) } />
                     <label for="biege"> Biege</label>
                 </li>
             </ul>

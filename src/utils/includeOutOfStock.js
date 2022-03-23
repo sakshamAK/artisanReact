@@ -1,1 +1,1 @@
-export const includeOutOfStock = data => [...data.filter(item => !item.inStock)]
+export const includeOutOfStock = data => data.filter(item => !item.inStock)

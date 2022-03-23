@@ -26,7 +26,7 @@ import {
     RED,
     BLUE,
     BIEGE
-} from "./action-types"
+} from "./index"
 
 export const reducer = (state, { type, payload }) => {
     switch (type) {
@@ -109,19 +109,19 @@ export const reducer = (state, { type, payload }) => {
 
         //color filter
         case WHITE:
-            return { ...state, white: payload }
+            return { ...state, color: {...state.color, white: payload } }
 
         case YELLOW:
-            return  { ...state, yellow: payload }
+            return  { ...state, color: {...state.color, yellow: payload }}
 
         case RED:
-            return { ...state, red: payload }
+            return { ...state, color: {...state.color, red: payload }}
 
         case BLUE:
-            return { ...state, blue: payload }
+            return { ...state, color: {...state.color, blue: payload }}
 
         case BIEGE:
-            return { ...state, biege: payload }
+            return { ...state, color: {...state.color, biege: payload }}
 
         default: return state
     }

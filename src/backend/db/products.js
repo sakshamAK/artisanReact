@@ -123,7 +123,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -137,7 +138,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 4,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "white"
   },
   {
     _id: uuid(),
@@ -151,7 +153,8 @@ export const products = [
     fastDelivery: false,
     onSale: true,
     starRatings: 1,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "white"
   },
   {
     _id: uuid(),
@@ -165,7 +168,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -179,7 +183,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 4,
-    mountType: "Floor"
+    mountType: "Floor",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -193,7 +198,8 @@ export const products = [
     fastDelivery: false,
     onSale: true,
     starRatings: 1,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "yellow"
   },
   {
     _id: uuid(),
@@ -207,7 +213,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "red"
   },  
   {
     _id: uuid(),
@@ -221,7 +228,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 5,
-    mountType: "Ceiling"
+    mountType: "Ceiling",
+    color: "biege"
   },
   {
     _id: uuid(),
@@ -235,7 +243,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 4,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "biege"
   },
   {
     _id: uuid(),
@@ -249,7 +258,8 @@ export const products = [
     fastDelivery: false,
     onSale: true,
     starRatings: 5,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -263,7 +273,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 2,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -277,7 +288,8 @@ export const products = [
     fastDelivery: false,
     onSale: true,
     starRatings: 5,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "white"
   },
   {
     _id: uuid(),
@@ -291,7 +303,8 @@ export const products = [
     fastDelivery: false,
     onSale: true,
     starRatings: 5,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "white"
   },
   {
     _id: uuid(),
@@ -305,7 +318,8 @@ export const products = [
     fastDelivery: true,
     onSale: true,
     starRatings: 2,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -319,7 +333,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Floor"
+    mountType: "Floor",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -333,7 +348,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "yellow"
   },
   {
     _id: uuid(),
@@ -347,7 +363,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "red"
   },  
   {
     _id: uuid(),
@@ -361,7 +378,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 3,
-    mountType: "Ceiling"
+    mountType: "Ceiling",
+    color: "biege"
   },
   {
     _id: uuid(),
@@ -375,7 +393,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 5,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "biege"
   },
   {
     _id: uuid(),
@@ -389,7 +408,8 @@ export const products = [
     fastDelivery: false,
     onSale: true,
     starRatings: 5,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -403,7 +423,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -417,7 +438,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 3,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "white"
   },
   {
     _id: uuid(),
@@ -431,7 +453,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 5,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "white"
   },
   {
     _id: uuid(),
@@ -445,7 +468,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 4,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -459,7 +483,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Floor"
+    mountType: "Floor",
+    color: "blue"
   },
   {
     _id: uuid(),
@@ -473,7 +498,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 5,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "yellow"
   },
   {
     _id: uuid(),
@@ -487,7 +513,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 3,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "red"
   },  
   {
     _id: uuid(),
@@ -501,7 +528,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 5,
-    mountType: "Ceiling"
+    mountType: "Ceiling",
+    color: "biege"
   },
   {
     _id: uuid(),
@@ -515,7 +543,8 @@ export const products = [
     fastDelivery: true,
     onSale: false,
     starRatings: 4,
-    mountType: "Table Top"
+    mountType: "Table Top",
+    color: "biege"
   },
   {
     _id: uuid(),
@@ -529,7 +558,8 @@ export const products = [
     fastDelivery: false,
     onSale: false,
     starRatings: 3,
-    mountType: "Wall"
+    mountType: "Wall",
+    color: "blue"
   },
 ];
 
