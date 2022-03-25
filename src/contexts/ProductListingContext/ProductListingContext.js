@@ -12,14 +12,14 @@ const initState = {
     inStock: false,
     fastDelivery: false,
     onSale: false,
-    categories : {
+    categories: {
         paperCutting: false,
         shadowBox: false,
         quilling: false,
         layering: false,
         origami: false,
         kirigami: false,
-        origami3d:false,
+        origami3d: false,
         miniatures: false
     },
     ratings: "",
@@ -40,12 +40,12 @@ const initState = {
 
 const ProductProvider = ({ children }) => {
 
-    const [ state, dispatch ] = useReducer(reducer, initState)
+    const [state, dispatch] = useReducer(reducer, initState)
     return (
-        <ProductContext.Provider value = {{ state, dispatch }}>
-            { children }
+        <ProductContext.Provider value={{ state, dispatch }}>
+            {children}
         </ProductContext.Provider>
     )
 }
 
-export {useProduct, ProductProvider}
+export { useProduct, ProductProvider, initState }

@@ -15,6 +15,9 @@ export const ProductList = () => {
     const { state: productState } = useProduct()
     const { state: cartState, dispatch } = useCart();
     const navigate = useNavigate();
+
+    // const isCheckedQuilling = () => filteredData(productState, products).reduce((acc,val) => val.type === "QUILLING" ? acc = true : acc ? true : false, false);
+
     return (
         <Fragment>
             <div className={`${styles.coverImg}`}>
@@ -22,12 +25,13 @@ export const ProductList = () => {
                 <h1>NEW COLLECTIONS JUST ARRIVED!!!</h1>
             </div>
             <div className={`${styles.container}`}>
-                <FilterPane />
+                <FilterPane /> 
+                {/* isCheckedQuilling = {isCheckedQuilling}  */}
                 <div className={`${styles.bodyPane}`}>
                     <h1>{categories[2]?.categoryName}</h1>
                     <div className={`${styles.itemsList}`}>
                         {filteredData(productState, products)?.map(({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount }) => (
-                            <div className={`${styles.card1} card ecom`}>
+                            <div key = {_id} className={`${styles.card1} card ecom`}>
                                 <div className="badge-h">
                                     <i className="material-icons">favorite_border</i>
                                     <img className="img-resp" src={imgSrc} alt="Products" />
@@ -40,7 +44,7 @@ export const ProductList = () => {
                                     <p className="prod-det">Rs.{ discount } <span>Rs.{ price } </span></p>
                                     {fastDelivery && <p className = {`${styles.itemAvailable} prod-cate`}>FAST DELIVERY</p>}
                                     {onSale && <p className = {`${styles.itemAvailable} prod-cate`}>ON SALE</p>}
-                                    <div className="btn primary" onClick = { () => cartState.mycart.find(item => item._id === _id) ? navigate("/cart") : dispatch(addToCart({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount })) }>Buy Now</div>
+                                    <div className="btn primary" onClick = { () => cartState.mycart.find(item => item._id === _id) ? (1 === 2) ? navigate("/cart") : navigate("/signin") : dispatch(addToCart({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount })) }>Buy Now</div>
                                 </div>
                             </div>
                         ))}

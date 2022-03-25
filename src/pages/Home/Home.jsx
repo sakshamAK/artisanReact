@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react'
-import { useState } from 'react';
-import { CardsList } from '../Components/';
-import { GridDisplay } from '../Components/';
+import React, { Fragment, useState } from 'react'
+import { CardsList, GridDisplay } from '../Components/'
+import { Link } from "react-router-dom"
 import styles from "./Home.module.css"
 
 export const Home = () => {
@@ -23,14 +22,14 @@ export const Home = () => {
     return (
         <Fragment>
             <div className = {`${styles.slideShow}`}>
-                <button className = {`${styles.slideLeft}`}> <i class={`material-icons ${styles["material-icons2"]}`} onClick = { nextSlide }>chevron_left</i> </button>
+                <button className = {`${styles.slideLeft}`}> <i className={`material-icons ${styles.materialIcons2}`} onClick = { nextSlide }>chevron_left</i> </button>
                 <img className="img-resp" src={slide} alt="boat in the ocean" />
-                <div className = {`${styles["slide-container"]}`} style = {{[position]: "10vw"}}>
-                    <div className = {`${styles["slide-head"]}`}>GET YOUR OWN ITEMS ON ORDERS</div>
-                    <div className = {`${styles["slide-sub"]}`}>Habitant sed fusce leo facilisis potenti lorem. Nisl vitae, pretium cras tincidunt nunc turpis magna elit. Eget facilisis quis libero, eros, arcu, vitae, amet justo. Ullamcorper semper</div>
-                    <button className = {`${styles["home-button"]}`}>VISIT STORE <i class={`material-icons`}>chevron_right</i></button>
+                <div className = {`${styles.slideContainer}`} style = {{[position]: "10vw"}}>
+                    <div className = {`${styles.slideHead}`}>GET YOUR OWN ITEMS ON ORDERS</div>
+                    <div className = {`${styles.slideSub}`}>Habitant sed fusce leo facilisis potenti lorem. Nisl vitae, pretium cras tincidunt nunc turpis magna elit. Eget facilisis quis libero, eros, arcu, vitae, amet justo. Ullamcorper semper</div>
+                    <Link to = "/store" className = {`${styles.homeButton} btn primary`}>VISIT STORE <i className={`material-icons`}>chevron_right</i></Link>
                 </div>
-                <button className = {`${styles.slideRight}`}><i class={`material-icons ${styles["material-icons2"]}`} onClick = { prevSlide }>chevron_right</i></button>
+                <button className = {`${styles.slideRight}`}><i className={`material-icons ${styles.materialIcons2}`} onClick = { prevSlide }>chevron_right</i></button>
             </div>
             <CardsList />
             <GridDisplay />

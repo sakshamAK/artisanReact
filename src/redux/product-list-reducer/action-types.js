@@ -1,3 +1,6 @@
+//Clear 
+export const CLEAR = "CLEAR";
+
 //Price sort
 export const HIGH_TO_LOW = "HIGH_TO_LOW";
 export const LOW_TO_HIGH = "LOW_TO_HIGH";

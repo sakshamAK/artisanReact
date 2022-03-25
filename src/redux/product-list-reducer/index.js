@@ -26,6 +26,7 @@ export {
     RED,
     BLUE,
     BIEGE,
+    CLEAR
 } from "./action-types"
 
 export { filteredData } from "./action"

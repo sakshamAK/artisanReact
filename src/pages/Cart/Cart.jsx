@@ -28,7 +28,7 @@ export const Cart = () => {
                     
                     : mycart?.map(({ _id, imgSrc, title, type, price }) => (
                         <Fragment>
-                            <div className={`${styles.hCard}`}>
+                            <div key = {_id} className={`${styles.hCard}`}>
                                 <img className={`${styles.cardImg}`} src={imgSrc} alt={type} />
                                 <div className={`${styles.cardProductName}`}>
                                     <h3>{title}</h3>
@@ -72,7 +72,7 @@ export const Cart = () => {
                             <h2>Total</h2>
                             <h2>Rs. {discount}</h2>
                         </div>
-                        <button class="btn primary">Checkout</button>
+                        <button className="btn primary">Checkout</button>
                     </div>
                 </div>
             </div>
