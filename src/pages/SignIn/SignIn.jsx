@@ -23,8 +23,13 @@ export const SignIn = () => {
         const res = await axios.post("/api/auth/login", JSON.stringify(validateData));
         const token = await res.data.encodedToken
         console.log(token)
-
-        const res2 = await axios.get("api/user/cart", {"authorization": token});
+        
+        const headers = {
+            headers: {
+                "authorization": token
+            }
+        }
+        const res2 = await axios.get("api/user/cart", headers);
         console.log(res2)
     }
 

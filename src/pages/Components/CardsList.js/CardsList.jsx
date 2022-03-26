@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./CardsList.module.css"
-import { useAPI } from '../../../contexts/APIContext/APIContext'
+import { useItemsData } from '../../../contexts/APIContext/APIContext'
 import { onlyItemsWithLayeringArt, onlyItemsWithQuilling, onlyItemsWithShadowBox } from '../../../redux/product-list-reducer';
 import { useNavigate } from 'react-router-dom';
 import { useProduct } from '../../../contexts/ProductListingContext/ProductListingContext';
@@ -8,7 +8,7 @@ import { useProduct } from '../../../contexts/ProductListingContext/ProductListi
 
 export const CardsList = () => {
     
-    const { categories, products } = useAPI();
+    const { categories, products } = useItemsData();
     const navigate = useNavigate();
     const { dispatch: storeDispatch } = useProduct();
 
