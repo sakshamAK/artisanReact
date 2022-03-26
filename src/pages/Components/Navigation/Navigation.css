@@ -1,0 +1,26 @@
+body {
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav-header {
+    background-color: #ffffff80;
+    font-size: 1.5rem;
+    padding: 0.5rem 8rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+}
+
+.menu-list-items:hover {
+    background-color: transparent;
+}
+
+.brand-name{
+    font-weight: 700;
+}
+
+.Link-color {
+    color: #1e1e1e;
+}
