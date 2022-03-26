@@ -1,9 +1,9 @@
 import React from 'react'
-import { useAPI } from '../../../contexts/APIContext/APIContext'
+import { useItemsData } from '../../../contexts/APIContext/APIContext'
 import styles from "./GridDisplay.module.css"
 
 export const GridDisplay = () => {
-  const { categories, products } = useAPI();
+  const { categories, products } = useItemsData();
 
   return (
     <div className = {`${styles.flexCont}`}>
