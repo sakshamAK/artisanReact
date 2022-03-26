@@ -26,7 +26,8 @@ export {
     RED,
     BLUE,
     BIEGE,
-    CLEAR
+    CLEAR,
+    SEARCH
 } from "./action-types"
 
 export { filteredData } from "./action"
@@ -59,6 +60,7 @@ export {
     colorBlue,
     colorBiege,
     colorRed,
+    performSearch
 } from "./dispatch-values"
 
 export { reducer } from "./reducer"

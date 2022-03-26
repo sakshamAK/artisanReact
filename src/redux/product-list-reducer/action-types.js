@@ -41,3 +41,6 @@ export const YELLOW = "YELLOW";
 export const RED = "RED";
 export const BLUE = "BLUE";
 export const BIEGE = "BIEGE";
+
+//search
+export const SEARCH = "SEARCH";

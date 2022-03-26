@@ -1,14 +1,9 @@
-// import React, { useState, useEffect } from 'react'
 import { useProduct } from '../../contexts/ProductListingContext/ProductListingContext';
 import { belowThreeStars, ceilingMount, colorBiege, colorBlue, colorRed, colorWhite, colorYellow, fastDelivery, fiveStars, floorMount, fourStars, itemsOnSale, onlyItemsWith3dOrigami, onlyItemsWithkirigami, onlyItemsWithLayeringArt, onlyItemsWithMiniatures, onlyItemsWithOrigami, onlyItemsWithPaperCuttings, onlyItemsWithQuilling, onlyItemsWithShadowBox, outOfStock, rangedData, sortHTL, sortLTH, tableTopMount, threeStars, wallMount } from '../../redux/product-list-reducer/';
 import styles from "./ProductList.module.css"
 
-export const FilterPane = ({ isCheckedQuilling }) => {
+export const FilterPane = () => {
     const { dispatch } = useProduct();
-    // const [ checked, setCheckStatus ] = useState("")
-    // useEffect(() => {
-    //     isCheckedQuilling() ? setCheckStatus("checked") : setCheckStatus("")
-    // }, [isCheckedQuilling])
     return (
         <form className={`${styles.filterPane}`}>
             <span className={`${styles.filter}`}>
