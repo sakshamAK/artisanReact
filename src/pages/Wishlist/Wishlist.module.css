@@ -6,7 +6,7 @@
     grid-auto-columns: 1fr;
     grid-template-areas: 
     ". header header header header header ."
-    ". cart   cart   cart   cart  price ."
+    ". wishlist   wishlist   wishlist   wishlist  . ."
     ;
 }
 
@@ -14,14 +14,9 @@
     grid-area: header;
 }
 
-.cartBody {
-    grid-area: cart;
+.wishlistBody {
+    grid-area: wishlist;
     padding-right: 1rem;
-}
-
-.totalPrice {
-    grid-area: price;
-    margin-top: 3rem;
 }
 
 .products {
@@ -112,14 +107,4 @@
 .warningAlert {
     align-self: center;
     grid-column: 1/4;
-}
-
-.itemNotAvailable {
-    color: var(--danger);
-    font-weight: 900;
-}
-
-.itemAvailable {
-    color: var(--success);
-    font-weight: 900;
 }

@@ -26,13 +26,16 @@ export const Cart = () => {
                         <h3>Your Cart Is Empty</h3>
                     </div> 
                     
-                    : mycart?.map(({ _id, imgSrc, title, type, price }) => (
+                    : mycart?.map(({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale }) => (
                         <Fragment>
                             <div key = {_id} className={`${styles.hCard}`}>
                                 <img className={`${styles.cardImg}`} src={imgSrc} alt={type} />
                                 <div className={`${styles.cardProductName}`}>
                                     <h3>{title}</h3>
                                     <h5>{type}</h5>
+                                    {!inStock && <h5 className = {`${styles.itemNotAvailable} prod-cate`}>OUT OF STOCK</h5>}
+                                    {fastDelivery && <h5 className = {`${styles.itemAvailable} prod-cate`}>FAST DELIVERY</h5>}
+                                    {onSale && <h5 className = {`${styles.itemAvailable} prod-cate`}>ON SALE</h5>}
                                 </div>
                             </div>
                             <div className={`${styles.updateItems}`}>

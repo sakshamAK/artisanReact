@@ -1,10 +1,10 @@
 import React from 'react'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAPI } from '../../contexts/APIContext/APIContext';
 import { useCart } from '../../contexts/CartContext/CartContext';
 import { useProduct } from '../../contexts/ProductListingContext/ProductListingContext';
-import { addToCart } from '../../redux/cart-reducer/action';
+import { addToCart, addToWishlist, removeFromWishlist } from '../../redux/cart-reducer/action';
 import { filteredData } from '../../redux/product-list-reducer/';
 import { FilterPane } from './FilterPane';
 import styles from "./ProductList.module.css"
@@ -16,7 +16,19 @@ export const ProductList = () => {
     const { state: cartState, dispatch } = useCart();
     const navigate = useNavigate();
 
-    // const isCheckedQuilling = () => filteredData(productState, products).reduce((acc,val) => val.type === "QUILLING" ? acc = true : acc ? true : false, false);
+    const [ wishlistButton, setButtonState ] = useState("favorite_border")
+
+    const wishlistToggle = ({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount }) => {
+        if(wishlistButton === "favorite_border") {
+            setButtonState("favorite")
+            navigate("/wishlist")
+            return dispatch(addToWishlist({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount }))
+        }
+        if(wishlistButton === "favorite"){
+            setButtonState("favorite_border")
+            return dispatch(removeFromWishlist({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount }))
+        }
+    }
 
     return (
         <Fragment>
@@ -26,14 +38,13 @@ export const ProductList = () => {
             </div>
             <div className={`${styles.container}`}>
                 <FilterPane /> 
-                {/* isCheckedQuilling = {isCheckedQuilling}  */}
                 <div className={`${styles.bodyPane}`}>
                     <h1>{categories[2]?.categoryName}</h1>
                     <div className={`${styles.itemsList}`}>
                         {filteredData(productState, products)?.map(({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount }) => (
                             <div key = {_id} className={`${styles.card1} card ecom`}>
                                 <div className="badge-h">
-                                    <i className="material-icons">favorite_border</i>
+                                    <i className="material-icons" onClick = {() => wishlistToggle({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount })} >{wishlistButton}</i>
                                     <img className="img-resp" src={imgSrc} alt="Products" />
                                     <h5 className="head-badge card-badge warning">New</h5>
                                 </div>
