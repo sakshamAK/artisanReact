@@ -1,12 +1,12 @@
 .gridcont {
     display: grid;
     grid-template-areas: 
-    "a a a d d e e g"
-    "a a a d d e e g"
-    "a a a b b b b g"
-    "a a a b b b b g"
-    "c c c c c f f f"
-    "c c c c c f f f"
+    "purpFlower purpFlower purpFlower peacock peacock orig3d orig3d fox"
+    "purpFlower purpFlower purpFlower peacock peacock orig3d orig3d fox"
+    "purpFlower purpFlower purpFlower quillFlower quillFlower quillFlower quillFlower fox"
+    "purpFlower purpFlower purpFlower quillFlower quillFlower quillFlower quillFlower fox"
+    "rabbit rabbit rabbit rabbit rabbit deer deer deer"
+    "rabbit rabbit rabbit rabbit rabbit deer deer deer"
     ;
     grid-template-columns: repeat(6,6rem);
     grid-template-rows: repeat(6,6rem);
@@ -28,23 +28,23 @@
 }
 
 .gridImg:nth-of-type(1) {
-    grid-area: a;
+    grid-area: purpFlower;
 }
 .gridImg:nth-of-type(2) {
-    grid-area: b;
+    grid-area: quillFlower;
 }
 .gridImg:nth-of-type(3) {
-    grid-area: c;
+    grid-area: rabbit;
 }
 .gridImg:nth-of-type(4) {
-    grid-area: d;
+    grid-area: peacock;
 }
 .gridImg:nth-of-type(5) {
-    grid-area: e;
+    grid-area: orig3d;
 }
 .gridImg:nth-of-type(6) {
-    grid-area: f;
+    grid-area: deer;
 }
 .gridImg:nth-of-type(7) {
-    grid-area: g;
+    grid-area: fox;
 }

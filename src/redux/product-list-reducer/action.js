@@ -113,42 +113,36 @@ export const filteredData = (state, data) => {
         const temp = whiteSort(reserveData);
         if (filteredData.find(item => item.color === "white")) filteredData = temp
         else filteredData = [...filteredData, ...temp]
-        console.log(temp)
     }
 
     if (state.color.red) {
         const temp = redSort(reserveData);
         if (filteredData.find(item => item.color === "red")) filteredData = temp
         else filteredData = [...filteredData, ...temp]
-        console.log(temp)
     }
 
     if (state.color.blue) {
         const temp = blueSort(reserveData);
         if (filteredData.find(item => item.color === "blue")) filteredData = temp
         else filteredData = [...filteredData, ...temp]
-        console.log(temp)
     }
 
     if (state.color.yellow) {
         const temp = yellowSort(reserveData);
         if (filteredData.find(item => item.color === "yellow")) filteredData = temp
         else filteredData = [...filteredData, ...temp]
-        console.log(temp)
     }
 
     if (state.color.biege) {
         const temp = biegeSort(reserveData);
         if (filteredData.find(item => item.color === "biege")) filteredData = temp
         else filteredData = [...filteredData, ...temp]
-        console.log(temp)
     }
 
     // Availability
     if (state.inStock) {
         const outOfStockData = includeOutOfStock(reserveData);
         filteredData = [...filteredData, ...outOfStockData]
-        console.log(filteredData)
     }
     if (state.fastDelivery) {
         const temp = includeFastDelivery(filteredData);

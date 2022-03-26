@@ -1,10 +1,9 @@
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Navigation } from "./pages/Components/Navigation/Navigation";
-import { Home } from "./pages/Home/Home";
-import { ProductList } from "./pages/ProductList/ProductList";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Home, ProductList, Navigation, Footer, Cart, SignIn, SignUp } from "./pages/";
 import Mockman from "mockman-js"
-import { Footer } from "./pages/Components/Footer/Footer"
+import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
+import { Wishlist } from "./pages/Wishlist/Wishlist";
 
 function App() {
   return (
@@ -14,6 +13,12 @@ function App() {
         <Route path="mockbee" element={<Mockman />} />
         <Route path="/" element={<Home />} />
         <Route path="/store" element={<ProductList />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/404notfound" element={<PageNotFound />} />
+        <Route path="*" element={<Navigate to = "/404notfound" replace />} />
       </Routes>
       <Footer />
     </BrowserRouter>

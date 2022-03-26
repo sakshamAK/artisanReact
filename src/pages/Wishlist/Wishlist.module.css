@@ -1,0 +1,110 @@
+.gridBody {
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: 8rem repeat(4, 1fr) 1.5fr 8rem;
+    grid-template-rows: 5rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    ". header header header header header ."
+    ". wishlist   wishlist   wishlist   wishlist  . ."
+    ;
+}
+
+.gridHeader {
+    grid-area: header;
+}
+
+.wishlistBody {
+    grid-area: wishlist;
+    padding-right: 1rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: 4rem;
+    grid-auto-rows: 10rem;
+    justify-items: center;
+    gap: 3rem;
+}
+
+.productName {
+    justify-self: flex-start;
+}
+
+.hCard {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-self: flex-start;
+}
+
+.cardImg {
+    height: 100%;
+}
+.cardProductName * {
+    margin: 0;
+    padding: 0;
+}
+
+.updateItems button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.updateItems input[type = "text"] {
+    width: 2rem;
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.updateItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.itemPrice {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.itemPrice i {
+    align-self: flex-start;
+    margin-right: -1rem;
+    cursor: pointer;
+}
+
+.priceContainer, .priceAndDiscount {
+    display: flex;
+    flex-direction: column;
+    margin: 0.6rem 0;
+}
+
+.priceContainer {
+    width: 100%;
+}
+
+.alignPrices {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.6rem 0;
+}
+
+.itemPriceDiscount {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemPriceDiscount p {
+    text-decoration: line-through;
+}
+
+.warningAlert {
+    align-self: center;
+    grid-column: 1/4;
+}
