@@ -108,3 +108,7 @@
     align-self: center;
     grid-column: 1/4;
 }
+
+.addToCart {
+    align-self: center;
+}

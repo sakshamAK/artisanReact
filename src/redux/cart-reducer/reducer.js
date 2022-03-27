@@ -1,4 +1,4 @@
-import { ADD_TO_CART, ADD_TO_WISHLIST, REMOVE_FROM_CART, REMOVE_FROM_WISHLIST } from "./action-types"
+import { ADD_TO_CART, ADD_TO_WISHLIST, DECREASE_ITEM_QUANTITY, REMOVE_FROM_CART, REMOVE_FROM_WISHLIST } from "./action-types"
 
 export const cartReducer = (state, { type, payload }) => {
     switch (type) {
@@ -6,16 +6,24 @@ export const cartReducer = (state, { type, payload }) => {
             ...state,
             quantity: state.quantity + 1,
             totalPrice: state.totalPrice + payload.price,
-            discount: state.discount + payload.discount,
-            mycart: [...state.mycart, payload]
+            totalDiscount: state.totalDiscount + payload.discount,
+            mycart: state.mycart.find(item => item._id === payload._id) ? [...state.mycart].map(item => item._id === payload._id ? {...item, qty: item.qty + 1} : item) : [...state.mycart, payload]
         }
 
         case REMOVE_FROM_CART: return {
             ...state,
             quantity: state.quantity - 1,
             totalPrice: state.totalPrice - payload.price,
-            discount: state.discount - payload.discount,
+            totalDiscount: state.totalDiscount - payload.discount,
             mycart: state.mycart.filter(item => item._id !== payload._id)
+        }
+
+        case DECREASE_ITEM_QUANTITY: return {
+            ...state,
+            quantity: state.quantity - 1,
+            totalPrice: state.totalPrice - payload.price,
+            totalDiscount: state.totalDiscount - payload.discount,
+            mycart: state.mycart.find(item => item._id === payload._id).qty === 1 ? state.mycart.filter(item => item._id !== payload._id) : state.mycart.map(item => item._id === payload._id ? {...item,qty:  item.qty > 1 ? item.qty - 1 : item.qty } : item)
         }
 
         case ADD_TO_WISHLIST: return {

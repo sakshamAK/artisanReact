@@ -1,13 +1,13 @@
 import React from 'react'
 import { Fragment } from 'react/cjs/react.production.min';
 import { useCart } from '../../contexts/CartContext/CartContext'
-import { removeFromCart } from '../../redux/cart-reducer/action';
+import { addToCart, decreaseItem, removeFromCart } from '../../redux/cart-reducer/action';
 import styles from "./Cart.module.css"
 
 export const Cart = () => {
 
     const { state: cartState, dispatch } = useCart();
-    const { mycart, quantity, totalPrice, discount } = cartState
+    const { mycart, quantity, totalPrice, totalDiscount } = cartState
 
     return (
         <div className={`${styles.gridBody}`}>
@@ -26,7 +26,7 @@ export const Cart = () => {
                         <h3>Your Cart Is Empty</h3>
                     </div> 
                     
-                    : mycart?.map(({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale }) => (
+                    : mycart?.map(({ _id, imgSrc, title, type, price, discount, inStock, fastDelivery, onSale, qty }) => (
                         <Fragment>
                             <div key = {_id} className={`${styles.hCard}`}>
                                 <img className={`${styles.cardImg}`} src={imgSrc} alt={type} />
@@ -39,9 +39,9 @@ export const Cart = () => {
                                 </div>
                             </div>
                             <div className={`${styles.updateItems}`}>
-                                <button>-</button>
-                                <input type="text" value="1" />
-                                <button>+</button>
+                                <button onClick = { () => dispatch(decreaseItem({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount, qty })) }>-</button>
+                                <input type="text" value={qty} disabled = "disabled" />
+                                <button onClick = { () => dispatch(addToCart({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount, qty })) }>+</button>
                             </div>
                             <div className={`${styles.itemPrice}`}>
                                 <div className={`${styles.itemPriceDiscount}`}>
@@ -68,12 +68,12 @@ export const Cart = () => {
                         </div>
                         <div className={`${styles.alignPrices}`}>
                             <h3>Discount</h3>
-                            <h4>Rs. {totalPrice - discount}</h4>
+                            <h4>Rs. {totalPrice - totalDiscount}</h4>
                         </div>
                         <hr />
                         <div className={`${styles.alignPrices}`}>
                             <h2>Total</h2>
-                            <h2>Rs. {discount}</h2>
+                            <h2>Rs. {totalDiscount}</h2>
                         </div>
                         <button className="btn primary">Checkout</button>
                     </div>

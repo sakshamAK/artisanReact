@@ -1,12 +1,12 @@
 .gridcont {
     display: grid;
     grid-template-areas: 
-    "purpFlower purpFlower purpFlower peacock peacock orig3d orig3d fox"
-    "purpFlower purpFlower purpFlower peacock peacock orig3d orig3d fox"
-    "purpFlower purpFlower purpFlower quillFlower quillFlower quillFlower quillFlower fox"
-    "purpFlower purpFlower purpFlower quillFlower quillFlower quillFlower quillFlower fox"
-    "rabbit rabbit rabbit rabbit rabbit deer deer deer"
-    "rabbit rabbit rabbit rabbit rabbit deer deer deer"
+    "purpFlower purpFlower purpFlower peacock     peacock     orig3d      orig3d      fox         fox"
+    "purpFlower purpFlower purpFlower peacock     peacock     orig3d      orig3d      fox         fox"
+    "purpFlower purpFlower purpFlower quillFlower quillFlower quillFlower quillFlower fox         fox"
+    "purpFlower purpFlower purpFlower quillFlower quillFlower quillFlower quillFlower fox         fox"
+    "rabbit     rabbit     rabbit     rabbit      rabbit      deer        deer        deer        deer"
+    "rabbit     rabbit     rabbit     rabbit      rabbit      deer        deer        deer        deer"
     ;
     grid-template-columns: repeat(6,6rem);
     grid-template-rows: repeat(6,6rem);
