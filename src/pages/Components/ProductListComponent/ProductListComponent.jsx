@@ -35,7 +35,7 @@ export const ProductListComponent = ({ _id, imgSrc, title, type, price, inStock,
                 <p className="prod-det">Rs.{ discount } <span>Rs.{ price } </span></p>
                 {fastDelivery && <p className = {`${styles.itemAvailable} prod-cate`}>FAST DELIVERY</p>}
                 {onSale && <p className = {`${styles.itemAvailable} prod-cate`}>ON SALE</p>}
-                <div className="btn primary" onClick = { () => cartState.mycart.find(item => item._id === _id) ? (2 === 2) ? navigate("/cart") : navigate("/signin") : dispatch(addToCart({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount, qty })) }>Buy Now</div>
+                <div className="btn primary" onClick = { () => cartState.mycart.find(item => item._id === _id) ? (1 === 2) ? navigate("/cart") : navigate("/signin") : dispatch(addToCart({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount, qty })) }>Buy Now</div>
             </div>
         </div>
   )
