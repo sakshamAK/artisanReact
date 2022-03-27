@@ -4,12 +4,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 20rem; */
 }
 
 .formContainer {
     width: 40%;
     padding: 2rem;
+}
+
+.formContainer div {
+    position: relative;
 }
 
 .formContainer div:nth-of-type(2) {
