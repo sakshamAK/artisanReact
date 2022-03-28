@@ -26,7 +26,19 @@ export const ProductList = () => {
                 <div className={`${styles.bodyPane}`}>
                     <h1>{categories[2]?.categoryName}</h1>
                     <div className={`${styles.itemsList}`}>
-                        {filteredData(productState, products)?.map(({_id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount, qty}) => (
+                        {filteredData(productState, products)?.map(
+                            ({
+                            _id, 
+                            imgSrc, 
+                            title, 
+                            type, 
+                            price, 
+                            inStock, 
+                            fastDelivery, 
+                            onSale, 
+                            discount, 
+                            qty
+                        }) => (
                         <ProductListComponent _id = {_id} imgSrc = {imgSrc} title = {title} type = {type} price = {price} inStock = {inStock} fastDelivery = {fastDelivery} onSale = {onSale} discount = {discount} qty = {qty} />
                         ))}
                     </div>

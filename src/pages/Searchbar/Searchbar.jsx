@@ -24,7 +24,18 @@ export const Searchbar = () => {
             <div>
                 <h1 className={`${styles.resultHead}`}>Search Result for "{ searchRes } " </h1>
                 <div className={`${styles.results}`}>
-                    {filteredData(productState, products)?.map(({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount }) => (
+                    {filteredData(productState, products)?.map(
+                        ({ 
+                            _id, 
+                            imgSrc, 
+                            title, 
+                            type, 
+                            price, 
+                            inStock, 
+                            fastDelivery, 
+                            onSale, 
+                            discount 
+                        }) => (
                         <ProductListComponent _id={_id} imgSrc={imgSrc} title={title} type={type} price={price} inStock={inStock} fastDelivery={fastDelivery} onSale={onSale} discount={discount} />
                     ))}
                 </div>

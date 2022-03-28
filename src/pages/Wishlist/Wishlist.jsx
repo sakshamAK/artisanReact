@@ -26,25 +26,49 @@ export const Wishlist = () => {
                             <h3>Your Wishlist Is Empty</h3>
                         </div>
 
-                        : wishlist?.map(({ _id, imgSrc, title, type, discount, price, inStock, fastDelivery, onSale, qty }) => (
-                            <Fragment>
-                                <div key={_id} className={`${styles.hCard}`}>
-                                    <img className={`${styles.cardImg}`} src={imgSrc} alt={type} />
-                                    <div className={`${styles.cardProductName}`}>
-                                        <h3>{title}</h3>
-                                        <h5>{type}</h5>
+                        : wishlist?.map(
+                            ({
+                                _id,
+                                imgSrc,
+                                title,
+                                type,
+                                discount,
+                                price,
+                                inStock,
+                                fastDelivery,
+                                onSale,
+                                qty
+                            }) => (
+                                <Fragment>
+                                    <div key={_id} className={`${styles.hCard}`}>
+                                        <img className={`${styles.cardImg}`} src={imgSrc} alt={type} />
+                                        <div className={`${styles.cardProductName}`}>
+                                            <h3>{title}</h3>
+                                            <h5>{type}</h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <button className = {`${styles.addToCart} btn primary`} onClick={() => dispatch(addToCart({ _id, imgSrc, title, type, price, inStock, fastDelivery, onSale, discount, qty }))}> Add To Cart </button>
-                                <div className={`${styles.itemPrice}`}>
-                                    <div className={`${styles.itemPriceDiscount}`}>
-                                        <h3>Rs. {discount}</h3>
-                                        <p>Rs. {price}</p>
+                                    <button className={`${styles.addToCart} btn primary`} onClick={() => dispatch(
+                                        addToCart({
+                                            _id,
+                                            imgSrc,
+                                            title,
+                                            type,
+                                            price,
+                                            inStock,
+                                            fastDelivery,
+                                            onSale,
+                                            discount,
+                                            qty
+                                        }))}> Add To Cart </button>
+                                    <div className={`${styles.itemPrice}`}>
+                                        <div className={`${styles.itemPriceDiscount}`}>
+                                            <h3>Rs. {discount}</h3>
+                                            <p>Rs. {price}</p>
+                                        </div>
+                                        <i className="material-icons" onClick={() => dispatch(removeFromWishlist({ _id, imgSrc, title, type, price }))}>close</i>
                                     </div>
-                                    <i className="material-icons" onClick={() => dispatch(removeFromWishlist({ _id, imgSrc, title, type, price }))}>close</i>
-                                </div>
-                            </Fragment>
-                        ))}
+                                </Fragment>
+                            ))}
                 </div>
             </div>
         </div>

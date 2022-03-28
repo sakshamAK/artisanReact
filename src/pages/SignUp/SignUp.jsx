@@ -37,27 +37,56 @@ export const SignUp = () => {
             <form className={`${styles.formContainer} form-grp`}>
                 <div className="input-grp">
                     <label htmlFor="email">Enter your email *</label>
-                    <input type="email" className="txt" placeholder="Email" name="email" />
+                    <input
+                        type="email"
+                        className="txt"
+                        placeholder="Email"
+                        name="email"
+                    />
                 </div>
                 <div className="input-grp">
                     <label htmlFor="Firstname">Enter your Firstname *</label>
-                    <input type="text" className="txt" placeholder="First name" name="Firstname" />
+                    <input
+                        type="text"
+                        className="txt"
+                        placeholder="First name"
+                        name="Firstname"
+                    />
                 </div>
                 <div className="input-grp">
                     <label htmlFor="Lastname">Enter your Lastname *</label>
-                    <input type="text" className="txt" placeholder="Last name" name="Lastname" />
+                    <input
+                        type="text"
+                        className="txt"
+                        placeholder="Last name"
+                        name="Lastname"
+                    />
                 </div>
                 <div className="input-grp">
                     <label htmlFor="new password">Enter your new password *</label>
-                    <input type={passwordType} className="pwd" placeholder="New Password" name="new password" />
+                    <input
+                        type={passwordType}
+                        className="pwd"
+                        placeholder="New Password"
+                        name="new password"
+                    />
                     <i className={`${styles.passwordVisibility} material-icons`} onClick={() => togglePassword()} >{toggleIcon}</i>
                 </div>
                 <div className="input-grp">
                     <label htmlFor="confirm password">Re-enter your new password *</label>
-                    <input type={rePasswordType} className="pwd" placeholder="Confirm Password" name="confirm password" />
+                    <input
+                        type={rePasswordType}
+                        className="pwd"
+                        placeholder="Confirm Password"
+                        name="confirm password"
+                    />
                     <i className={`${styles.passwordVisibility} material-icons`} onClick={() => toggleRePassword()} >{toggleReIcon}</i>
                 </div>
-                <input type="submit" value="Sign Up" className="btn primary" />
+                <input
+                    type="submit"
+                    value="Sign Up"
+                    className="btn primary"
+                />
                 <div className={`${styles.signup}`}>Already have an account? <Link to="/signin">Sign In</Link></div>
             </form>
         </div>
