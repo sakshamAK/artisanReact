@@ -4,12 +4,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 20rem; */
 }
 
 .formContainer {
     width: 40%;
     padding: 2rem;
+}
+
+.formContainer div {
+    position: relative;
 }
 
 .formContainer div:nth-of-type(2) {
@@ -24,7 +27,7 @@
     font-size: 1.3rem;
 }
 
-.formContainer input[value = "Test User"] {
+.formContainer input[value = "Sign In"] {
     margin-top: 3rem;
 }
 
@@ -33,7 +36,7 @@
     right: 0;
     bottom: -1.2rem;
     font-size: 0.9rem;
-    color: #1e1e1e;
+    color: var(--font-primary);
 }
 
 .signup {
@@ -49,4 +52,16 @@
     height: 40%;
     gap: 2rem;
     font-size: 1.5rem;
+}
+
+.errToast {
+    justify-content: space-between;
+}
+
+.passwordVisibility {
+    position: absolute;
+    right: 1rem;
+    top: 1.7rem;
+    cursor: pointer;
+    user-select: none;
 }

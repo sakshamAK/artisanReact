@@ -25,7 +25,8 @@ import {
     THREE_STAR,
     WALL,
     WHITE,
-    YELLOW
+    YELLOW,
+    SEARCH
 
 } from "./index";
 
@@ -165,5 +166,10 @@ export const colorBiege = payload => ({
 
 export const colorRed = payload => ({
     type: RED,
+    payload
+})
+
+export const performSearch = payload => ({
+    type: SEARCH,
     payload
 })

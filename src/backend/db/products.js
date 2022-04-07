@@ -125,7 +125,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -141,7 +142,8 @@ export const products = [
     onSale: false,
     starRatings: 4,
     mountType: "Wall",
-    color: "white"
+    color: "white",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -157,7 +159,8 @@ export const products = [
     onSale: true,
     starRatings: 1,
     mountType: "Table Top",
-    color: "white"
+    color: "white",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -173,7 +176,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -189,7 +193,8 @@ export const products = [
     onSale: false,
     starRatings: 4,
     mountType: "Floor",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -205,7 +210,8 @@ export const products = [
     onSale: true,
     starRatings: 1,
     mountType: "Table Top",
-    color: "yellow"
+    color: "yellow",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -221,7 +227,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Wall",
-    color: "red"
+    color: "red",
+    qty: 1
   },  
   {
     _id: uuid(),
@@ -237,7 +244,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Ceiling",
-    color: "biege"
+    color: "biege",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -253,7 +261,8 @@ export const products = [
     onSale: false,
     starRatings: 4,
     mountType: "Table Top",
-    color: "biege"
+    color: "biege",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -269,7 +278,8 @@ export const products = [
     onSale: true,
     starRatings: 5,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -285,7 +295,8 @@ export const products = [
     onSale: false,
     starRatings: 2,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -301,7 +312,8 @@ export const products = [
     onSale: true,
     starRatings: 5,
     mountType: "Wall",
-    color: "white"
+    color: "white",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -317,7 +329,8 @@ export const products = [
     onSale: true,
     starRatings: 5,
     mountType: "Table Top",
-    color: "white"
+    color: "white",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -333,7 +346,8 @@ export const products = [
     onSale: true,
     starRatings: 2,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -349,7 +363,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Floor",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -365,7 +380,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Table Top",
-    color: "yellow"
+    color: "yellow",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -381,7 +397,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Wall",
-    color: "red"
+    color: "red",
+    qty: 1
   },  
   {
     _id: uuid(),
@@ -397,7 +414,8 @@ export const products = [
     onSale: false,
     starRatings: 3,
     mountType: "Ceiling",
-    color: "biege"
+    color: "biege",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -413,7 +431,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Table Top",
-    color: "biege"
+    color: "biege",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -429,7 +448,8 @@ export const products = [
     onSale: true,
     starRatings: 5,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -445,7 +465,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -461,7 +482,8 @@ export const products = [
     onSale: false,
     starRatings: 3,
     mountType: "Wall",
-    color: "white"
+    color: "white",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -477,7 +499,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Table Top",
-    color: "white"
+    color: "white",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -493,7 +516,8 @@ export const products = [
     onSale: false,
     starRatings: 4,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -509,7 +533,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Floor",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -525,7 +550,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Table Top",
-    color: "yellow"
+    color: "yellow",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -541,7 +567,8 @@ export const products = [
     onSale: false,
     starRatings: 3,
     mountType: "Wall",
-    color: "red"
+    color: "red",
+    qty: 1
   },  
   {
     _id: uuid(),
@@ -557,7 +584,8 @@ export const products = [
     onSale: false,
     starRatings: 5,
     mountType: "Ceiling",
-    color: "biege"
+    color: "biege",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -573,7 +601,8 @@ export const products = [
     onSale: false,
     starRatings: 4,
     mountType: "Table Top",
-    color: "biege"
+    color: "biege",
+    qty: 1
   },
   {
     _id: uuid(),
@@ -589,7 +618,8 @@ export const products = [
     onSale: false,
     starRatings: 3,
     mountType: "Wall",
-    color: "blue"
+    color: "blue",
+    qty: 1
   },
 ];
 

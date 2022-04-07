@@ -27,7 +27,8 @@ import {
     RED,
     BLUE,
     BIEGE,
-    CLEAR
+    CLEAR,
+    SEARCH
 } from "./index"
 
 export const reducer = (state, { type, payload }) => {
@@ -127,6 +128,10 @@ export const reducer = (state, { type, payload }) => {
 
         case BIEGE:
             return { ...state, color: { ...state.color, biege: payload } }
+
+        //search
+        case SEARCH:
+            return { ...state, search: payload }
 
         default: return state
     }

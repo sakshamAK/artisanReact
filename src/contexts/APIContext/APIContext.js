@@ -15,7 +15,7 @@ export const getCategories = async () => {
 
 const APIContext = createContext(null)
 
-const useAPI = () => useContext(APIContext)
+const useItemsData = () => useContext(APIContext)
 
 const APIProvider = ({ children }) => {
 
@@ -51,4 +51,4 @@ const APIProvider = ({ children }) => {
     )
 }
 
-export { useAPI, APIProvider }
+export { useItemsData, APIProvider }

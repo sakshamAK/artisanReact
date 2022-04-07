@@ -38,7 +38,14 @@ export const CardsList = () => {
             <h1>{categories[0]?.categoryName}</h1>
             <div className={`${styles["categ-list"]}`} >
                 {products.filter(item => item.categoryName === "Best Sellers")
-                    ?.map(({ _id, title, author, price, imgSrc, type }) => 
+                    ?.map(({ 
+                            _id, 
+                            title, 
+                            author, 
+                            price, 
+                            imgSrc, 
+                            type 
+                        }) => 
                         (
                             <div key = {_id} className={`${styles["card1"]} card`} onClick = {() => loadCategory(type, true)}>
                                 <img className="card-img" src={imgSrc} alt={type} />

@@ -18,5 +18,10 @@
 }
 
 .Link-color {
-    color: #1e1e1e;
+    color: var(--font-primary);
+}
+
+.brand-name {
+    text-decoration: none;
+    color: var(--font-primary);
 }

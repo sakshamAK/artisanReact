@@ -171,10 +171,22 @@ export const filteredData = (state, data) => {
             break;
         default: filteredData = [...filteredData];
     }
-    
+
     //SORT BY PRICE
     if (state.sortByPrice === HIGH_TO_LOW) filteredData = highToLow(filteredData);
     if (state.sortByPrice === LOW_TO_HIGH) filteredData = lowToHigh(filteredData);
+
+
+    if (state.search !== "") {
+        filteredData = reserveData.filter(item => {
+            if (
+                item.type.toLowerCase().includes(state.search.toLowerCase()) ||
+                item.title.toLowerCase().includes(state.search.toLowerCase()) ||
+                item.author.toLowerCase().includes(state.search.toLowerCase())
+            ) return item
+            else return ""
+        });
+    }
 
     return filteredData;
 }

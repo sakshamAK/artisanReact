@@ -8,6 +8,7 @@ const useProduct = () => useContext(ProductContext);
 //Initial state for reducer
 const initState = {
     sortByPrice: "",
+    search:"",
     range: 5000,
     inStock: false,
     fastDelivery: false,
