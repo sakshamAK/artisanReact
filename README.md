@@ -38,7 +38,7 @@ Here you can:
  - Remove from wishlist
  - Add to cart
 
-(https://artisan2-ak.netlify.app)[https://artisan2-ak.netlify.app]
+[https://artisan2-ak.netlify.app](https://artisan2-ak.netlify.app)
 
 
 
