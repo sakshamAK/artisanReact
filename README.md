@@ -37,6 +37,11 @@ Here you can:
 #### Wishlist
  - Remove from wishlist
  - Add to cart
+#### Search
+ You can search any product you want based on 
+ - Category
+ - Artist name (all artists are named as saksham currently)
+ - Name of the product
 
 [https://artisan2-ak.netlify.app](https://artisan2-ak.netlify.app)
 
