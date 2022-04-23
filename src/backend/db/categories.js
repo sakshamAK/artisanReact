@@ -17,5 +17,9 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "PRODUCT CART",
+  },
+  {
+    _id: uuid(),
+    categoryName: "CATEGORIES",
   }
 ];

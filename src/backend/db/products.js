@@ -43,7 +43,46 @@ export const products = [
     type: "SHADOW BOX"
   },
 
-  //Collectionws
+  //Categories
+
+  {
+    _id: uuid(),
+    title: "Forest Rabbit",
+    author: "Saksham",
+    price: 499,
+    categoryName: "Categories",
+    imgSrc: "../../images/rabb.jpg",
+    type: "PAPER CUTTING"
+  },
+  {
+    _id: uuid(),
+    title: "The Forest Dear",
+    author: "Saksham",
+    price: 399,
+    categoryName: "Categories",
+    imgSrc: "../../images/sh2.jpg",
+    type: "SHADOW BOX"
+  },
+  {
+    _id: uuid(),
+    title: "The Cunning Fox",
+    author: "Saksham",
+    price: 299,
+    categoryName: "Categories",
+    imgSrc: "../../images/quill1.jpg",
+    type: "ORIGAMI"
+  },
+  {
+    _id: uuid(),
+    title: "Royal Peacock",
+    author: "Saksham",
+    price: 1299,
+    categoryName: "Categories",
+    imgSrc: "../../images/quill3.jpg",
+    type: "QUILLING"
+  },
+
+  //Collections
 
   {
     _id: uuid(),
@@ -115,8 +154,8 @@ export const products = [
     _id: uuid(),
     title: "Beautiful Minds",
     author: "Saksham",
-    price: 899,
-    discount: 699,
+    price: 2199,
+    discount: 1699,
     categoryName: "Product Cart",
     imgSrc: "../../images/layer2.png",
     type: "LAYERING ART",
@@ -126,14 +165,15 @@ export const products = [
     starRatings: 5,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
     title: "God's Eye",
     author: "Saksham",
     price: 2999,
-    discount: 2299,
+    discount: 2799,
     categoryName: "Product Cart",
     imgSrc: "../../images/layer1.jpg",
     type: "LAYERING ART",
@@ -143,7 +183,8 @@ export const products = [
     starRatings: 4,
     mountType: "Wall",
     color: "white",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -160,7 +201,8 @@ export const products = [
     starRatings: 1,
     mountType: "Table Top",
     color: "white",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -177,14 +219,15 @@ export const products = [
     starRatings: 5,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
     title: "Couple Swans",
     author: "Saksham",
-    price: 2599,
-    discount: 1999,
+    price: 1999,
+    discount: 1499,
     categoryName: "Product Cart",
     imgSrc: "../../images/3dswan.jpg",
     type: "3D ORIGAMI",
@@ -194,7 +237,8 @@ export const products = [
     starRatings: 4,
     mountType: "Floor",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -211,7 +255,8 @@ export const products = [
     starRatings: 1,
     mountType: "Table Top",
     color: "yellow",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -228,7 +273,8 @@ export const products = [
     starRatings: 5,
     mountType: "Wall",
     color: "red",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },  
   {
     _id: uuid(),
@@ -245,7 +291,8 @@ export const products = [
     starRatings: 5,
     mountType: "Ceiling",
     color: "biege",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -262,14 +309,15 @@ export const products = [
     starRatings: 4,
     mountType: "Table Top",
     color: "biege",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
     title: "Royal Peacock",
     author: "Saksham",
-    price: 1299,
-    discount: 999,
+    price: 1699,
+    discount: 1459,
     categoryName: "Product Cart",
     imgSrc: "../../images/quill301.jpg",
     type: "QUILLING",
@@ -279,7 +327,8 @@ export const products = [
     starRatings: 5,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -296,14 +345,15 @@ export const products = [
     starRatings: 2,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
     title: "God's Eye",
     author: "Saksham",
-    price: 2999,
-    discount: 2299,
+    price: 1699,
+    discount: 1469,
     categoryName: "Product Cart",
     imgSrc: "../../images/layer1.jpg",
     type: "LAYERING ART",
@@ -313,7 +363,8 @@ export const products = [
     starRatings: 5,
     mountType: "Wall",
     color: "white",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -330,7 +381,8 @@ export const products = [
     starRatings: 5,
     mountType: "Table Top",
     color: "white",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -347,7 +399,8 @@ export const products = [
     starRatings: 2,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -364,14 +417,15 @@ export const products = [
     starRatings: 5,
     mountType: "Floor",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
     title: "Forest Deer",
     author: "Saksham",
-    price: 2999,
-    discount: 2299,
+    price: 3999,
+    discount: 2999,
     categoryName: "Product Cart",
     imgSrc: "../../images/sh1.jpg",
     type: "SHADOW BOX",
@@ -381,7 +435,8 @@ export const products = [
     starRatings: 5,
     mountType: "Table Top",
     color: "yellow",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -398,7 +453,8 @@ export const products = [
     starRatings: 5,
     mountType: "Wall",
     color: "red",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },  
   {
     _id: uuid(),
@@ -415,7 +471,8 @@ export const products = [
     starRatings: 3,
     mountType: "Ceiling",
     color: "biege",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -432,7 +489,8 @@ export const products = [
     starRatings: 5,
     mountType: "Table Top",
     color: "biege",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -449,7 +507,8 @@ export const products = [
     starRatings: 5,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -466,7 +525,8 @@ export const products = [
     starRatings: 5,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -483,7 +543,8 @@ export const products = [
     starRatings: 3,
     mountType: "Wall",
     color: "white",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -500,7 +561,8 @@ export const products = [
     starRatings: 5,
     mountType: "Table Top",
     color: "white",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -517,7 +579,8 @@ export const products = [
     starRatings: 4,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -534,7 +597,8 @@ export const products = [
     starRatings: 5,
     mountType: "Floor",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -551,7 +615,8 @@ export const products = [
     starRatings: 5,
     mountType: "Table Top",
     color: "yellow",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -568,7 +633,8 @@ export const products = [
     starRatings: 3,
     mountType: "Wall",
     color: "red",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },  
   {
     _id: uuid(),
@@ -585,7 +651,8 @@ export const products = [
     starRatings: 5,
     mountType: "Ceiling",
     color: "biege",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -602,7 +669,8 @@ export const products = [
     starRatings: 4,
     mountType: "Table Top",
     color: "biege",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
   {
     _id: uuid(),
@@ -619,7 +687,8 @@ export const products = [
     starRatings: 3,
     mountType: "Wall",
     color: "blue",
-    qty: 1
+    qty: 1,
+    wishlist: false
   },
 ];
 
