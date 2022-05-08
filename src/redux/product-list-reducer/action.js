@@ -157,7 +157,7 @@ export const filteredData = (state, data) => {
     }
 
     //RANGE
-    filteredData = filteredData.filter(items => Number(items.price) < Number(state.range))
+    filteredData = filteredData.filter(items => Number(items.discount) < Number(state.range))
 
     //RATINGS 
     switch (state.ratings) {

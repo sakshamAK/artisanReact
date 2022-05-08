@@ -47,6 +47,9 @@ export const addItemToWishlistHandler = function (schema, request) {
     }
     const userWishlist = schema.users.findBy({ _id: userId }).wishlist;
     const { product } = JSON.parse(request.requestBody);
+    if (userWishlist.find((item) => item._id === product._id))
+      throw new Error("item already exists");
+
     userWishlist.push({
       ...product,
       createdAt: formatDate(),

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios"
 
 const AuthContext = createContext()
@@ -9,11 +9,15 @@ const AuthProvider = ({ children }) => {
     const [email, setMail] = useState("adarshbalika@gmail.com")
     const [password, setPassword] = useState("adarshbalika")
     const [err, setErr] = useState("");
-    const isAuth = token => token ? true : false
+    const [isAuth, setAuth] = useState(localStorage.getItem("token") ? true : false);
+
+    useEffect(() => {
+        localStorage.getItem("token") ? setAuth(true) : setAuth (false);
+    },[isAuth])
 
     const errorToast = message => {
         const delay = 1500
-        
+
         setErr(message)
         setTimeout(() => setErr(""), delay)
     }
@@ -26,7 +30,7 @@ const AuthProvider = ({ children }) => {
             email: "",
             password: ""
         }
-        
+
         if (e.target.value === "Test User") {
             validateData = {
                 ...validateData,
@@ -45,24 +49,24 @@ const AuthProvider = ({ children }) => {
 
         try {
             const res = await axios.post("/api/auth/login", JSON.stringify(validateData));
-            const token = await res.data.encodedToken
-            isAuth(token);
+            localStorage.setItem("token", await res.data.encodedToken);
+            setAuth(true);
+            const headers = {
+                headers: {
+                    "authorization": localStorage.getItem("token")
+                }
+            }
+
+            const getCartData = async () => await axios.get("api/user/cart", headers);
+            console.log(getCartData())
         }
-        
+
         catch (e) {
             errorToast(e)
         }
     }
-    // const headers = {
-    //     headers: {
-    //         "authorization": token
-    //     }
-    // }
-
-    // const res2 = await axios.get("api/user/cart", headers);
-
     return (
-        <AuthContext.Provider value={{ setCredentials, email, password, setMail, setPassword, err, isAuth }}>
+        <AuthContext.Provider value={{ setCredentials, email, password, setMail, setPassword, err, isAuth, setAuth }}>
             {children}
         </AuthContext.Provider>
     )

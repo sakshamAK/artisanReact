@@ -14,6 +14,11 @@
     background-color: #f7faff;
 }
 
+.rangeNum {
+    display: flex;
+    justify-content: space-between;
+}
+
 .container {
     display: grid;
     padding: 5rem 0;

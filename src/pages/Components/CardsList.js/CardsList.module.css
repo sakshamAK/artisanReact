@@ -4,6 +4,10 @@
     justify-content: space-between;
 }
 
+.categ-list:first-of-type {
+    padding-bottom: 6rem;
+}
+
 .card1 {
     width: 12rem;
     box-shadow: none;
