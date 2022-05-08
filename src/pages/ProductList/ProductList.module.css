@@ -1,0 +1,70 @@
+.coverImg {
+    height: 17rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.coverImg h1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    border-radius: 1rem 0 0 0;
+    color: #11284d;
+    background-color: #f7faff;
+}
+
+.rangeNum {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: grid;
+    padding: 5rem 0;
+    grid-template-columns: 5rem 15rem 4fr 5rem;
+    grid-template-areas: ". sidebar body .";
+}
+
+.filterPane {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.bodyPane {
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 2rem;
+}
+
+.filterPane ul li {
+    list-style-type: none;
+    padding: 0.4rem;
+}
+
+.filter .btn {
+    border: 1px solid #11284d;;
+    color: #11284d;
+    font-weight: bold;
+    border-radius: 0;
+    padding: 0.2rem 0.5rem;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2rem;
+    align-items: center;
+}
+
+.itemsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    /* align-items: flex-start; */
+}

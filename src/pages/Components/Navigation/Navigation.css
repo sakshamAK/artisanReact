@@ -1,0 +1,27 @@
+.nav-header {
+    background-color: #ffffff80;
+    font-size: 1.5rem;
+    padding: 0.5rem 8rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+}
+
+.menu-list-items:hover {
+    background-color: transparent;
+}
+
+.brand-name{
+    font-weight: 700;
+}
+
+.Link-color {
+    color: var(--font-primary);
+}
+
+.brand-name {
+    text-decoration: none;
+    color: var(--font-primary);
+}
