@@ -61,7 +61,7 @@ export const ProductListComponent = ({ item }) => {
             { headers: { authorization: localStorage.getItem("token") } }
           );
 
-          return dispatch(addToWishlist(res.data.wishlist)); 
+          return dispatch(addToWishlist(res.data.wishlist));
         } else {
           const res = await axios.delete(`/api/user/wishlist/${_id}`, {
             headers: { authorization: localStorage.getItem("token") },
@@ -104,8 +104,11 @@ export const ProductListComponent = ({ item }) => {
         )}
         <div
           className="btn primary"
-          onClick={() =>
-            productInCartExist ? navigate("/cart") : addItemToCart(item)
+          onClick={
+            inStock
+              ? () =>
+                  productInCartExist ? navigate("/cart") : addItemToCart(item)
+              : () => alert("Not in stock")
           }
         >
           {productInCartExist ? "Go to Cart" : "Buy Now"}
