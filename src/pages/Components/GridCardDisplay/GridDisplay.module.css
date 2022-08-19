@@ -9,18 +9,22 @@
     "rabbit     rabbit     rabbit     rabbit      rabbit      deer        deer        deer        deer        deer"
     "rabbit     rabbit     rabbit     rabbit      rabbit      deer        deer        deer        deer        deer"
     "rabbit     rabbit     rabbit     rabbit      rabbit      deer        deer        deer        deer        deer";
-  grid-template-columns: repeat(7, 6rem);
-  grid-auto-columns: 6rem;
-  grid-template-rows: repeat(7, 6rem);
-  grid-auto-rows: 6rem;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+  grid-auto-rows: 1fr;
   align-self: center;
 }
 
 .flexCont {
   display: flex;
   flex-direction: column;
-  padding: 10rem 7rem;
+  padding: clamp(1rem, 13vw, 10rem) clamp(1rem, 10vw, 7rem);
   gap: 3rem;
+}
+
+.flexCont h1 {
+  font-size: 1.5rem;
 }
 
 .gridImg {
@@ -33,7 +37,7 @@
 }
 
 .gridImg img:hover,
-.showDetails + img:hover {
+.showDetails+img:hover {
   transition: all 0.2s ease-in-out;
   filter: contrast(80%) blur(5px);
   transform: scale(1.05);
@@ -71,21 +75,27 @@
 .gridImg:nth-of-type(1) {
   grid-area: purpFlower;
 }
+
 .gridImg:nth-of-type(2) {
   grid-area: quillFlower;
 }
+
 .gridImg:nth-of-type(3) {
   grid-area: rabbit;
 }
+
 .gridImg:nth-of-type(4) {
   grid-area: peacock;
 }
+
 .gridImg:nth-of-type(5) {
   grid-area: orig3d;
 }
+
 .gridImg:nth-of-type(6) {
   grid-area: deer;
 }
+
 .gridImg:nth-of-type(7) {
   grid-area: fox;
 }

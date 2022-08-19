@@ -11,37 +11,28 @@ export const SlideShow = () => {
   ];
   const [count, setCount] = useState(0);
   const [slide, setSlide] = useState(slides[count]);
-  const [position, setPosition] = useState("left");
+  const [gridColumn, setGridSpan] = useState("2/8");
 
   const nextSlide = () => {
     count < 2 ? setCount((prev) => prev + 1) : setCount(0);
     setSlide(slides[count]);
     count === 2
-      ? setPosition("right")
-      : setPosition("left");
+      ? setGridSpan("10/16")
+      : setGridSpan("2/8");
   };
   const prevSlide = () => {
     count > 0 ? setCount((prev) => prev - 1) : setCount(2);
     count === 2
-      ? setPosition("right")
-      : setPosition("left");
+      ? setGridSpan("10/16")
+      : setGridSpan("2/8");
     setSlide(slides[count]);
   };
   return (
     <div className={`${styles.slideShow}`}>
-      <button className={`${styles.slideLeft}`}>
-        {" "}
-        <i
-          className={`material-icons ${styles.materialIcons2}`}
-          onClick={prevSlide}
-        >
-          chevron_left
-        </i>{" "}
-      </button>
-      <img className="img-resp" src={slide} alt="boat in the ocean" />
+      <img className={`${styles["img-resp"]}`} src={slide} alt="boat in the ocean" />
       <div
         className={`${styles.slideContainer}`}
-        style={{ [position]: "10vw" }}
+        style={{ gridColumn }}
       >
         <div className={`${styles.slideHead}`}>
           GET YOUR OWN ITEMS ON ORDERS
@@ -55,6 +46,15 @@ export const SlideShow = () => {
           VISIT STORE <i className={`material-icons`}>chevron_right</i>
         </Link>
       </div>
+      <button className={`${styles.slideLeft}`}>
+        {" "}
+        <i
+          className={`material-icons ${styles.materialIcons2}`}
+          onClick={prevSlide}
+        >
+          chevron_left
+        </i>{" "}
+      </button>
       <button className={`${styles.slideRight}`}>
         <i
           className={`material-icons ${styles.materialIcons2}`}

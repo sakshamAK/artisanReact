@@ -50,7 +50,7 @@ export const CardsList = () => {
                 dispatch({ type: setDispatchType(type), payload: true });
               }}
             >
-              <img className="card-img" src={imgSrc} alt={type} />
+              <img className={`${styles["card-img1"]} card-img`} src={imgSrc} alt={type} />
               <h4>{type}</h4>
             </div>
           ))}
@@ -69,7 +69,7 @@ export const CardsList = () => {
                 dispatch({ type: setDispatchType(type), payload: true });
               }}
             >
-              <img className="card-img" src={imgSrc} alt={type} />
+              <img className={`${styles["card-img1"]} card-img`} src={imgSrc} alt={type} />
               <h4>{title}</h4>
               <p className={`${styles.authorprice}`}>
                 <span>
