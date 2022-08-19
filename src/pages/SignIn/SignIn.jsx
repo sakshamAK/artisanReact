@@ -30,7 +30,7 @@ export const SignIn = () => {
       {isAuth ? (
         <div>
           <h1>You are logged in!</h1>
-          <button className="btn primary" onClick={() => {
+          <button className={`${styles.logoutBtn} btn primary`} onClick={() => {
             localStorage.removeItem("token");
             setAuth(false);
           }}>Logout</button>
