@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Toaster } from "react-hot-toast";
 import { useItemsData } from "../../contexts/APIContext/APIContext";
 import { useProduct } from "../../contexts/ProductListingContext/ProductListingContext";
 import { filteredData, performSearch } from "../../redux/product-list-reducer";
@@ -16,6 +17,7 @@ export const Searchbar = () => {
 
   return (
     <div className={`${styles.gridContainer}`}>
+      <Toaster />
       <div className={`${styles.searchbar}`}>
         <i className="material-icons">search</i>
         <input

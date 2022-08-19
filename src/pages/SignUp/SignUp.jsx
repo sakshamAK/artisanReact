@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext/AuthContext';
 import styles from "../SignIn/SignIn.module.css"
 
 export const SignUp = () => {
@@ -7,6 +9,7 @@ export const SignUp = () => {
     const [rePasswordType, setReType] = useState("password");
     const [toggleIcon, setToggleIcon] = useState("visibility_off");
     const [toggleReIcon, setToggleReIcon] = useState("visibility_off");
+    const { registerUser, email, password, setMail, setPassword } = useAuth();
     const togglePassword = () => {
         if (passwordType === "password") {
             setType("text")
@@ -30,6 +33,7 @@ export const SignUp = () => {
     }
     return (
         <div className={`${styles.signinForm}`}>
+            <Toaster />
             <div className={`${styles.loginBanner}`}>
                 <h1>Sign Up</h1>
                 <p>Looks like you're new here! Sign up with your email to get started</p>
@@ -42,6 +46,8 @@ export const SignUp = () => {
                         className="txt"
                         placeholder="Email"
                         name="email"
+                        value={email}
+                        onChange={(e) => setMail(e.target.value)}
                     />
                 </div>
                 <div className="input-grp">
@@ -69,6 +75,8 @@ export const SignUp = () => {
                         className="pwd"
                         placeholder="New Password"
                         name="new password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                     />
                     <i className={`${styles.passwordVisibility} material-icons`} onClick={() => togglePassword()} >{toggleIcon}</i>
                 </div>
@@ -86,6 +94,7 @@ export const SignUp = () => {
                     type="submit"
                     value="Sign Up"
                     className="btn primary"
+                    onClick={e => registerUser(e)}
                 />
                 <div className={`${styles.signup}`}>Already have an account? <Link to="/signin">Sign In</Link></div>
             </form>

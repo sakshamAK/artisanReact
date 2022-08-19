@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../../contexts/CartContext/CartContext";
 import {
   addToCart,
@@ -8,7 +8,7 @@ import {
 } from "../../../redux/cart-reducer/action";
 import styles from "./ProductListComponent.module.css";
 import axios from "axios";
-import { useAuth } from "../../../contexts/AuthContext/AuthContext";
+import toast from "react-hot-toast";
 
 export const ProductListComponent = ({ item }) => {
   const {
@@ -24,7 +24,6 @@ export const ProductListComponent = ({ item }) => {
   } = item;
   const { state: cartState, dispatch } = useCart();
   const navigate = useNavigate();
-  const { isAuth } = useAuth();
 
   const isInWishlist = () =>
     cartState.wishlist.find((wishlistItem) => wishlistItem._id === _id);
@@ -34,45 +33,51 @@ export const ProductListComponent = ({ item }) => {
   );
 
   const addItemToCart = async (product, productInCartExist) => {
-    if (productInCartExist === undefined) {
-      const {
-        data: { cart },
-      } = await axios.post(
-        "/api/user/cart",
-        { product },
-        { headers: { authorization: localStorage.getItem("token") } }
-      );
-      dispatch(addToCart(cart));
-    } else {
-      navigate("/cart");
+    try {
+      if (productInCartExist === undefined) {
+        const {
+          data: { cart },
+        } = await axios.post(
+          "/api/user/cart",
+          { product },
+          { headers: { authorization: localStorage.getItem("token") } }
+        );
+        dispatch(addToCart(cart));
+        toast.success("Item added to cart");
+      } else {
+        navigate("/cart");
+      }
+    }
+    catch (err) {
+      const errorType = "add Item to cart"
+      console.error(errorType, err)
+      toast.error("Please log in to continue!")
     }
   };
 
   const wishlistToggle = async (item) => {
-    if (isAuth) {
-      try {
-        const foundInWishlist = cartState.wishlist.find(
-          (wishlistItem) => wishlistItem._id === _id
+    try {
+      const foundInWishlist = cartState.wishlist.find(
+        (wishlistItem) => wishlistItem._id === _id
+      );
+      if (foundInWishlist === undefined) {
+        const res = await axios.post(
+          "/api/user/wishlist",
+          { product: item },
+          { headers: { authorization: localStorage.getItem("token") } }
         );
-        if (foundInWishlist === undefined) {
-          const res = await axios.post(
-            "/api/user/wishlist",
-            { product: item },
-            { headers: { authorization: localStorage.getItem("token") } }
-          );
 
-          return dispatch(addToWishlist(res.data.wishlist));
-        } else {
-          const res = await axios.delete(`/api/user/wishlist/${_id}`, {
-            headers: { authorization: localStorage.getItem("token") },
-          });
-          return dispatch(removeFromWishlist(res.data.wishlist));
-        }
-      } catch (err) {
-        console.error(err);
+        return dispatch(addToWishlist(res.data.wishlist));
+      } else {
+        const res = await axios.delete(`/api/user/wishlist/${_id}`, {
+          headers: { authorization: localStorage.getItem("token") },
+        });
+        return dispatch(removeFromWishlist(res.data.wishlist));
       }
-    } else {
-      <Navigate to="/signin" />;
+    } catch (err) {
+      const errorType = "wishlist toggle"
+      console.error(errorType, err)
+      toast.error("Please log in to continue!")
     }
   };
   return (
@@ -107,7 +112,7 @@ export const ProductListComponent = ({ item }) => {
           onClick={
             inStock
               ? () =>
-                  productInCartExist ? navigate("/cart") : addItemToCart(item)
+                productInCartExist ? navigate("/cart") : addItemToCart(item)
               : () => alert("Not in stock")
           }
         >

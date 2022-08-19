@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext/AuthContext";
 import styles from "./SignIn.module.css";
+import { Toaster } from "react-hot-toast"
 
 export const SignIn = () => {
   const [passwordType, setType] = useState("password");
   const [toggleIcon, setToggleIcon] = useState("visibility_off");
-  const { setCredentials, email, setMail, setPassword, password, err, isAuth, setAuth } =
+  const { setCredentials, email, setMail, setPassword, password, isAuth, setAuth } =
     useAuth();
   const navigate = useNavigate();
   const togglePassword = () => {
@@ -21,22 +22,17 @@ export const SignIn = () => {
 
   return (
     <div className={`${styles.signinForm}`}>
+      <Toaster />
       <div className={`${styles.loginBanner}`}>
         <h1>Sign In</h1>
         <p>Get Access To Your Cart, Wishlist And Orders</p>
-        {err && (
-          <div className={`${styles.errToast} toast danger`}>
-            <p>Invalid Credentials!! Please Try Again.</p>
-            <i className="material-icons btn danger">close</i>
-          </div>
-        )}
       </div>
       {isAuth ? (
         <div>
           <h1>You are logged in!</h1>
-          <button className = "btn primary" onClick = {() => {
-              localStorage.removeItem("token");
-              setAuth(false);
+          <button className="btn primary" onClick={() => {
+            localStorage.removeItem("token");
+            setAuth(false);
           }}>Logout</button>
         </div>
       ) : (

@@ -8,6 +8,7 @@ import { filteredData } from "../../redux/product-list-reducer";
 import { useProduct } from "../../contexts/ProductListingContext/ProductListingContext";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 
 export const ProductList = () => {
   const { categories } = useItemsData();
@@ -22,6 +23,7 @@ export const ProductList = () => {
   return (
     <Fragment>
       <div className={`${styles.coverImg}`}>
+        <Toaster />
         <img
           className="img-resp"
           src="/images/coverProducts.webp"

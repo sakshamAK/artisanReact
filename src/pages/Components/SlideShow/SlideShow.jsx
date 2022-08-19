@@ -16,7 +16,6 @@ export const SlideShow = () => {
   const nextSlide = () => {
     count < 2 ? setCount((prev) => prev + 1) : setCount(0);
     setSlide(slides[count]);
-    console.log(count);
     count === 2
       ? setPosition("right")
       : setPosition("left");

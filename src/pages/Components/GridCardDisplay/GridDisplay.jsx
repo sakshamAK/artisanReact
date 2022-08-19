@@ -10,7 +10,6 @@ export const GridDisplay = () => {
   const navigate = useNavigate();
   const { dispatch } = useProduct();
   const setDispatchType = (item) => {
-    console.log(item);
     switch (item) {
       case "QUILLING":
         return "QUILLING";

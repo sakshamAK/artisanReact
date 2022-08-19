@@ -10,6 +10,7 @@ import {
 import styles from "./Cart.module.css";
 import axios from "axios";
 import { priceCalculator } from "../../utils/priceCalculator";
+import { Toaster } from "react-hot-toast";
 
 export const Cart = () => {
   const { state: cartState, dispatch } = useCart();
@@ -19,36 +20,52 @@ export const Cart = () => {
   const { isAuth } = useAuth();
 
   const incItem = async (_id) => {
-    const { data } = await axios.post(
-      `/api/user/cart/${_id}`,
-      { action: { type: "increment" } },
-      { headers: { authorization: localStorage.getItem("token") } }
-    );
-    dispatch(addToCart(data.cart));
+    try {
+      const { data } = await axios.post(
+        `/api/user/cart/${_id}`,
+        { action: { type: "increment" } },
+        { headers: { authorization: localStorage.getItem("token") } }
+      );
+      dispatch(addToCart(data.cart));
+    }
+    catch (err) {
+      const errorType = "Increment Items"
+      console.error(errorType, err)
+    }
   };
 
   const removeItem = async (_id) => {
-    const { data } = await axios.delete(`/api/user/cart/${_id}`, {
-      headers: { authorization: localStorage.getItem("token") },
-    });
-    dispatch(addToCart(data.cart));
-  };
-
-  const decItem = async (_id, qty) => {
-    if (qty > 1) {
-      const { data } = await axios.post(
-        `/api/user/cart/${_id}`,
-        { action: { type: "decrement" } },
-        { headers: { authorization: localStorage.getItem("token") } }
-      );
-      console.log(data.cart);
-      dispatch(decreaseItem(data.cart));
-    } else {
+    try {
       const { data } = await axios.delete(`/api/user/cart/${_id}`, {
         headers: { authorization: localStorage.getItem("token") },
       });
-      console.log(data.cart, "helo wporld");
-      dispatch(removeFromCart(data.cart));
+      dispatch(addToCart(data.cart));
+    }
+    catch (err) {
+      const errorType = "Remove Item"
+      console.error(errorType, err)
+    }
+  };
+
+  const decItem = async (_id, qty) => {
+    try {
+      if (qty > 1) {
+        const { data } = await axios.post(
+          `/api/user/cart/${_id}`,
+          { action: { type: "decrement" } },
+          { headers: { authorization: localStorage.getItem("token") } }
+        );
+        dispatch(decreaseItem(data.cart));
+      } else {
+        const { data } = await axios.delete(`/api/user/cart/${_id}`, {
+          headers: { authorization: localStorage.getItem("token") },
+        });
+        dispatch(removeFromCart(data.cart));
+      }
+    }
+    catch (err) {
+      const errorType = "Decrement Item"
+      console.error(errorType, err)
     }
   };
 
@@ -61,6 +78,7 @@ export const Cart = () => {
 
   return (
     <div className={`${styles.gridBody}`}>
+      <Toaster />
       <div className={`${styles.gridHeader}`}>
         <h1>Shopping Cart</h1>
       </div>

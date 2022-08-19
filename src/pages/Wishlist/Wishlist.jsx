@@ -9,6 +9,7 @@ import {
 } from "../../redux/cart-reducer/action";
 import axios from "axios";
 import styles from "./Wishlist.module.css";
+import { Toaster } from "react-hot-toast";
 
 export const Wishlist = () => {
   const { state: cartState, dispatch } = useCart();
@@ -25,7 +26,8 @@ export const Wishlist = () => {
         });
         dispatch(addToWishlist(wishlist));
       } catch (err) {
-        console.error(err);
+        const errorType = "get wishlist data"
+        console.error(errorType, err)
       }
     })();
   }, []);
@@ -39,7 +41,8 @@ export const Wishlist = () => {
       });
       dispatch(removeFromWishlist(wishlist));
     } catch (err) {
-      console.error(err);
+      const errorType = "remove from wishlist"
+      console.error(errorType, err)
     }
   };
 
@@ -64,6 +67,7 @@ export const Wishlist = () => {
 
   return (
     <div className={`${styles.gridBody}`}>
+      <Toaster />
       <div className={`${styles.gridHeader}`}>
         <h1>My Wishlist</h1>
       </div>
@@ -142,7 +146,6 @@ export const Wishlist = () => {
               )
             )
           )}
-          {console.log(wishlist)}
         </div>
       </div>
     </div>
