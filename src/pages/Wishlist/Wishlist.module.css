@@ -4,9 +4,9 @@
     grid-template-columns: 8rem repeat(4, 1fr) 1.5fr 8rem;
     grid-template-rows: 5rem;
     grid-auto-columns: 1fr;
-    grid-template-areas: 
-    ". header header header header header ."
-    ". wishlist   wishlist   wishlist   wishlist  . ."
+    grid-template-areas:
+        ". header header header header header ."
+        ". wishlist   wishlist   wishlist   wishlist  . ."
     ;
 }
 
@@ -42,6 +42,7 @@
 .cardImg {
     height: 100%;
 }
+
 .cardProductName * {
     margin: 0;
     padding: 0;
@@ -54,7 +55,7 @@
     cursor: pointer;
 }
 
-.updateItems input[type = "text"] {
+.updateItems input[type="text"] {
     width: 2rem;
     text-align: center;
     margin: 0 1rem;
@@ -79,7 +80,8 @@
     cursor: pointer;
 }
 
-.priceContainer, .priceAndDiscount {
+.priceContainer,
+.priceAndDiscount {
     display: flex;
     flex-direction: column;
     margin: 0.6rem 0;
@@ -111,4 +113,56 @@
 
 .addToCart {
     align-self: center;
+}
+
+@media screen and (max-width: 910px) {
+    .gridBody {
+        display: grid;
+        margin-top: 5rem;
+        grid-template-columns: clamp(1rem, 8vw, 8rem) repeat(4, 1fr) 1.5fr clamp(1rem, 8vw, 8rem);
+        grid-template-rows: 5rem;
+        grid-auto-columns: 1fr;
+        grid-template-areas:
+            ". header header header header header ."
+            ". wishlist   wishlist   wishlist   wishlist  wishlist ."
+        ;
+    }
+}
+
+@media screen and (max-width: 804px) {
+    .products {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5rem;
+        grid-auto-rows: 5rem;
+        justify-items: center;
+        gap: 0;
+    }
+
+    .hCard {
+        border-top: 1px solid black;
+        padding-top: 0.5rem;
+        width: 100%;
+    }
+
+    .addToCart {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .itemPrice {
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+        top: -100%;
+    }
+
+    .warningAlert {
+        grid-row: 1/2;
+    }
+
+    .products h2,
+    .flexbox:first-of-type {
+        display: none;
+    }
 }

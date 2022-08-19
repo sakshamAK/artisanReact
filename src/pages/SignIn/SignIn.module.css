@@ -65,3 +65,26 @@
     cursor: pointer;
     user-select: none;
 }
+
+@media screen and (max-width: 745px) {
+    .signinForm {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .loginBanner {
+        padding: clamp(3rem, 13vw, 6rem) 5rem clamp(1rem, 5vw, 3rem) 5rem;
+        width: 100%;
+        gap: 1rem;
+        height: min-content;
+    }
+
+    .loginBanner p {
+        font-size: 1.2rem;
+    }
+
+    .formContainer {
+        padding: 0 5rem;
+        width: 100%;
+    }
+}

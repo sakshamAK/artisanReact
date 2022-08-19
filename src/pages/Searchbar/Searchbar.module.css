@@ -1,9 +1,9 @@
 .gridContainer {
     display: grid;
     grid-template-rows: 8rem 1fr;
-    grid-template-areas: 
-    "search"
-    "results"
+    grid-template-areas:
+        "search"
+        "results"
     ;
     justify-items: center;
     align-items: center;
@@ -17,14 +17,14 @@
     position: relative;
 }
 
-.searchbar input[type = "text"] {
+.searchbar input[type="text"] {
     padding: 0.5rem 4rem;
     font-size: 1.5rem;
     border-radius: 999px;
     width: 100%;
 }
 
-.searchbar i{
+.searchbar i {
     position: absolute;
     left: 1rem;
 }
@@ -39,4 +39,37 @@
 
 .resultHead {
     margin: 0 2rem 2rem;
+}
+
+@media screen and (max-width: 745px) {
+    .gridContainer {
+        padding: 0 clamp(1rem, 4vw, 5rem);
+    }
+
+    .results {
+        gap: 1.5rem;
+    }
+
+    .searchbar {
+        margin-top: 5rem;
+    }
+
+    .resultHead {
+        margin: 2rem;
+        font-size: 1.5rem;
+
+    }
+
+    .searchbar input[type="text"] {
+        font-size: 1rem;
+        padding: 0.5rem 1rem 0.5rem 3rem;
+    }
+
+}
+
+@media screen and (max-width: 595px) {
+
+    .resultHead {
+        margin: 1rem;
+    }
 }
