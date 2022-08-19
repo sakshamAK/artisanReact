@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 8rem;
+    padding: 1rem clamp(2rem, 8vw, 8rem);
 }
 
 .iconList {
@@ -11,4 +11,12 @@
     list-style-type: none;
     gap: 1rem;
     font-size: 1.3rem;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 713px) {
+    .iconList {
+        display: none;
+    }
 }

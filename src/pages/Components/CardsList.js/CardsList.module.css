@@ -39,11 +39,16 @@
     font-size: 1.5rem;
 }
 
+.categ-container h4 {
+    line-height: 1rem;
+}
+
 .authorprice {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: -0.5rem 0;
+    margin: 0;
+    font-size: 0.8rem;
 }
 
 .authorprice span:first-child {

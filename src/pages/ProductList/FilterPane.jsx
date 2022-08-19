@@ -32,10 +32,10 @@ import {
 import styles from "./ProductList.module.css";
 
 export const FilterPane = () => {
-  const { state, dispatch } = useProduct();
-  const [ rangeValue, setRangeValue ] = useState(3100);
+  const { state, dispatch, display, toggleFilter } = useProduct();
+  const [rangeValue, setRangeValue] = useState(3100);
   return (
-    <form className={`${styles.filterPane}`}>
+    <form className={`${styles.filterPane}`} style={{ display }}>
       <span className={`${styles.filter}`}>
         <h4>PRICE</h4>
         <input
@@ -97,7 +97,7 @@ export const FilterPane = () => {
       </datalist>
       <p className={`${styles.rangeNum}`}>
         <span>300</span>
-        <b>{ rangeValue }</b>
+        <b>{rangeValue}</b>
       </p>
       <h4>AVAILABILITY</h4>
       <ul>
@@ -344,6 +344,7 @@ export const FilterPane = () => {
           <label htmlFor="biege"> Biege</label>
         </li>
       </ul>
+      <button className={`${styles.closeFilter} btn danger`} onClick={e => toggleFilter(e)}>Close</button>
     </form>
   );
 };

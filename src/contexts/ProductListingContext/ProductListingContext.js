@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import { reducer } from "../../redux/product-list-reducer/";
 
 const ProductContext = createContext(null);
@@ -8,7 +8,7 @@ const useProduct = () => useContext(ProductContext);
 //Initial state for reducer
 const initState = {
     sortByPrice: "",
-    search:"",
+    search: "",
     range: 5000,
     inStock: false,
     fastDelivery: false,
@@ -41,9 +41,14 @@ const initState = {
 
 const ProductProvider = ({ children }) => {
 
-    const [state, dispatch] = useReducer(reducer, initState)
+    const [state, dispatch] = useReducer(reducer, initState);
+    const [display, setDisplay] = useState("");
+    const toggleFilter = e => {
+        e.preventDefault();
+        setDisplay(display === "flex" ? "none" : "flex");
+    }
     return (
-        <ProductContext.Provider value={{ state, dispatch }}>
+        <ProductContext.Provider value={{ state, dispatch, display, setDisplay, toggleFilter }}>
             {children}
         </ProductContext.Provider>
     )

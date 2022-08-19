@@ -36,10 +36,10 @@ export const Cart = () => {
 
   const removeItem = async (_id) => {
     try {
-      const { data } = await axios.delete(`/api/user/cart/${_id}`, {
+      const { data: { cart } } = await axios.delete(`/api/user/cart/${_id}`, {
         headers: { authorization: localStorage.getItem("token") },
       });
-      dispatch(addToCart(data.cart));
+      dispatch(removeFromCart({ cart, _id }));
     }
     catch (err) {
       const errorType = "Remove Item"
@@ -50,12 +50,12 @@ export const Cart = () => {
   const decItem = async (_id, qty) => {
     try {
       if (qty > 1) {
-        const { data } = await axios.post(
+        const { data: { cart } } = await axios.post(
           `/api/user/cart/${_id}`,
           { action: { type: "decrement" } },
           { headers: { authorization: localStorage.getItem("token") } }
         );
-        dispatch(decreaseItem(data.cart));
+        dispatch(decreaseItem({ cart, _id }));
       } else {
         const { data } = await axios.delete(`/api/user/cart/${_id}`, {
           headers: { authorization: localStorage.getItem("token") },
@@ -85,8 +85,10 @@ export const Cart = () => {
       <div className={`${styles.cartBody}`}>
         <div className={`${styles.products}`}>
           <h2 className={`${styles.productName}`}>Product</h2>
-          <h2>Quantity</h2>
-          <h2>Price</h2>
+          <div className={`${styles.flexbox}`}>
+            <h2>Quantity</h2>
+            <h2>Price</h2>
+          </div>
           {mycart.length === 0 ? (
             <div className={`${styles.warningAlert} alert warning`}>
               <i className="material-icons">warning</i>
@@ -133,22 +135,24 @@ export const Cart = () => {
                       )}
                     </div>
                   </div>
-                  <div className={`${styles.updateItems}`}>
-                    <button onClick={() => decItem(_id, qty)}>-</button>
-                    <input type="text" value={qty} disabled="disabled" />
-                    <button onClick={() => incItem(_id)}>+</button>
-                  </div>
-                  <div className={`${styles.itemPrice}`}>
-                    <div className={`${styles.itemPriceDiscount}`}>
-                      <h3>Rs. {discount}</h3>
-                      <p>Rs. {price}</p>
+                  <div className={`${styles.flexbox}`}>
+                    <div className={`${styles.updateItems}`}>
+                      <button onClick={() => decItem(_id, qty)}>-</button>
+                      <input type="text" value={qty} disabled="disabled" />
+                      <button onClick={() => incItem(_id)}>+</button>
                     </div>
-                    <i
-                      className="material-icons"
-                      onClick={() => removeItem(_id)}
-                    >
-                      close
-                    </i>
+                    <div className={`${styles.itemPrice}`}>
+                      <div className={`${styles.itemPriceDiscount}`}>
+                        <h3>Rs. {discount}</h3>
+                        <p>Rs. {price}</p>
+                      </div>
+                      <i
+                        className="material-icons"
+                        onClick={() => removeItem(_id)}
+                      >
+                        close
+                      </i>
+                    </div>
                   </div>
                 </Fragment>
               )
@@ -177,10 +181,10 @@ export const Cart = () => {
               <h2>Total</h2>
               <h2>Rs. {checkoutPrice}</h2>
             </div>
-            <button className="btn primary">Checkout</button>
+            <button className={`${styles.checkoutBtn} btn primary`}>Checkout</button>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };

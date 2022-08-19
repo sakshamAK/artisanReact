@@ -18,15 +18,15 @@ export const cartReducer = (state, { type, payload }) => {
     case REMOVE_FROM_CART:
       return {
         ...state,
-        quantity: state.quantity - 1,
-        mycart: payload
+        quantity: state.quantity - state.mycart.find(item => item._id === payload._id).qty,
+        mycart: payload.cart
       };
 
     case DECREASE_ITEM_QUANTITY:
       return {
         ...state,
         quantity: state.quantity - 1,
-        mycart: payload
+        mycart: payload.cart
       };
 
     case ADD_TO_WISHLIST:

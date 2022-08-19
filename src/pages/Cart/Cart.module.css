@@ -1,12 +1,12 @@
 .gridBody {
     display: grid;
     margin-top: 5rem;
-    grid-template-columns: 8rem repeat(4, 1fr) 1.5fr 8rem;
+    grid-template-columns: clamp(1rem, 8vw, 8rem) repeat(4, 1fr) 1.5fr clamp(1rem, 8vw, 8rem);
     grid-template-rows: 5rem;
     grid-auto-columns: 1fr;
-    grid-template-areas: 
-    ". header header header header header ."
-    ". cart   cart   cart   cart  price ."
+    grid-template-areas:
+        ". header header header header header ."
+        ". cart   cart   cart   cart  price ."
     ;
 }
 
@@ -26,7 +26,7 @@
 
 .products {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 4rem;
     grid-auto-rows: 10rem;
     justify-items: center;
@@ -47,6 +47,7 @@
 .cardImg {
     height: 100%;
 }
+
 .cardProductName * {
     margin: 0;
     padding: 0;
@@ -59,7 +60,7 @@
     cursor: pointer;
 }
 
-.updateItems input[type = "text"] {
+.updateItems input[type="text"] {
     width: 2rem;
     text-align: center;
     margin: 0 1rem;
@@ -84,7 +85,8 @@
     cursor: pointer;
 }
 
-.priceContainer, .priceAndDiscount {
+.priceContainer,
+.priceAndDiscount {
     display: flex;
     flex-direction: column;
     margin: 0.6rem 0;
@@ -122,4 +124,62 @@
 .itemAvailable {
     color: var(--success);
     font-weight: 900;
+}
+
+.flexbox {
+    display: flex;
+    gap: 4rem;
+}
+
+
+@media screen and (max-width: 910px) {
+    .checkoutBtn {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .gridBody {
+        display: grid;
+        margin-top: 5rem;
+        grid-template-columns: clamp(1rem, 8vw, 8rem) repeat(4, 1fr) 1.5fr clamp(1rem, 8vw, 8rem);
+        grid-template-rows: 5rem;
+        grid-auto-columns: 1fr;
+        grid-template-areas:
+            ". header header header header header ."
+            ". cart   cart   cart   cart  cart ."
+            ". price   price   price   price  price ."
+        ;
+    }
+
+    .totalPrice {
+        border-top: 2px solid black;
+        padding-top: 3rem;
+    }
+}
+
+@media screen and (max-width: 804px) {
+    .products {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 7rem;
+        grid-auto-rows: 7rem;
+        justify-items: center;
+        gap: 0;
+    }
+
+    .flexbox {
+        align-self: flex-start;
+        justify-self: flex-start;
+        width: 100%;
+    }
+
+    .itemPrice {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+
+    .products h2, .flexbox:first-of-type {
+        display: none;
+    }
 }

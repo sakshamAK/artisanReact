@@ -50,6 +50,7 @@
   z-index: 4;
   opacity: 0;
   color: white;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 .showDetails p {

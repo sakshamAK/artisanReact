@@ -13,8 +13,9 @@ import { Toaster } from "react-hot-toast";
 export const ProductList = () => {
   const { categories } = useItemsData();
   const { products } = useItemsData();
-  const { state: productState } = useProduct();
+  const { state: productState, toggleFilter } = useProduct();
   const { category } = useParams();
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,15 +35,15 @@ export const ProductList = () => {
       <div className={`${styles.container}`}>
         <FilterPane />
         <div className={`${styles.bodyPane}`}>
-          <h1>{categories[2]?.categoryName}</h1>
+          <div className={`${styles.filterButton}`}><h1>{categories[2]?.categoryName}</h1> <button className="btn primary" onClick={e => toggleFilter(e)}>Filter<i className="material-symbols-outlined">filter_alt</i></button></div>
           <div className={`${styles.itemsList}`}>
             {category
               ? filteredData(productState, products)
-                  ?.filter((item) => item.type === category)
-                  .map((item) => <ProductListComponent item={item} key = {item._id} />)
+                ?.filter((item) => item.type === category)
+                .map((item) => <ProductListComponent item={item} key={item._id} />)
               : filteredData(productState, products)?.map((item) => (
-                  <ProductListComponent item={item} key = {item._id} />
-                ))}
+                <ProductListComponent item={item} key={item._id} />
+              ))}
           </div>
         </div>
       </div>
