@@ -66,12 +66,15 @@ export const ProductListComponent = ({ item }) => {
           { product: item },
           { headers: { authorization: localStorage.getItem("token") } }
         );
-
+        
+        toast.success("Item added to Wishlist!")
         return dispatch(addToWishlist(res.data.wishlist));
       } else {
         const res = await axios.delete(`/api/user/wishlist/${_id}`, {
           headers: { authorization: localStorage.getItem("token") },
         });
+        
+        toast.success("Item removed from Wishlist!")
         return dispatch(removeFromWishlist(res.data.wishlist));
       }
     } catch (err) {

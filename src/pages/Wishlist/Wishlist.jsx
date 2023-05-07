@@ -9,7 +9,7 @@ import {
 } from "../../redux/cart-reducer/action";
 import axios from "axios";
 import styles from "./Wishlist.module.css";
-import { Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 
 export const Wishlist = () => {
   const { state: cartState, dispatch } = useCart();
@@ -39,6 +39,7 @@ export const Wishlist = () => {
       } = await axios.delete(`/api/user/wishlist/${_id}`, {
         headers: { authorization: localStorage.getItem("token") },
       });
+      toast.success("Item removed from wishlist!")
       dispatch(removeFromWishlist(wishlist));
     } catch (err) {
       const errorType = "remove from wishlist"
@@ -59,6 +60,7 @@ export const Wishlist = () => {
         { product },
         { headers: { authorization: localStorage.getItem("token") } }
       );
+      toast.success("Item added to cart!")
       dispatch(addToCart(cart));
     } else {
       navigate("/cart");
