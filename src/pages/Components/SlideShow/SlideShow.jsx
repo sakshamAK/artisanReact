@@ -34,13 +34,15 @@ export const SlideShow = () => {
         className={`${styles.slideContainer}`}
         style={{ gridColumn }}
       >
-        <div className={`${styles.slideHead}`}>
-          GET YOUR OWN ITEMS ON ORDERS
-        </div>
-        <div className={`${styles.slideSub}`}>
-          Habitant sed fusce leo facilisis potenti lorem. Nisl vitae, pretium
-          cras tincidunt nunc turpis magna elit. Eget facilisis quis libero,
-          eros, arcu, vitae, amet justo. Ullamcorper semper
+        <div>
+          <div className={`${styles.slideHead}`}>
+            GET YOUR OWN ITEMS ON ORDERS
+          </div>
+          <div className={`${styles.slideSub}`}>
+            Habitant sed fusce leo facilisis potenti lorem. Nisl vitae, pretium
+            cras tincidunt nunc turpis magna elit. Eget facilisis quis libero,
+            eros, arcu, vitae, amet justo. Ullamcorper semper
+          </div>
         </div>
         <Link to="/store" className={`${styles.homeButton} btn primary`}>
           VISIT STORE <i className={`material-icons`}>chevron_right</i>
