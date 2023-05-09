@@ -1,3 +1,5 @@
+export { AddressManagement } from "./AddressManagement/AddressManagement"
+
 export { Navigation } from "./Navigation/Navigation"
 
 export { GridDisplay } from "./GridCardDisplay/GridDisplay"

@@ -10,6 +10,7 @@ import {
   Wishlist,
   Searchbar,
   PageNotFound,
+  SingleProductPage,
 } from "./pages/";
 import "./App.css";
 import Mockman from "mockman-js";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/404notfound" element={<PageNotFound />} />
         <Route path="/search" element={<Searchbar />} />
+        <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="*" element={<Navigate to="/404notfound" replace />} />
 
         <Route element={<PrivateRoute />}>

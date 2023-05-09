@@ -3,6 +3,7 @@
 .card1 {
     justify-content: space-between;
     width: clamp(10rem, 22vw, 15rem);
+    cursor: pointer;
 }
 
 .itemNotAvailable {

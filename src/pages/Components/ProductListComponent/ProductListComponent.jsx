@@ -92,7 +92,7 @@ export const ProductListComponent = ({ item }) => {
         >
           {isInWishlist() ? "favorite" : "favorite_border"}
         </i>
-        <img className="img-resp" src={imgSrc} alt="Products" />
+        <img className="img-resp" src={imgSrc} alt="Products" onClick = {() => navigate(`/product/${_id}`)} />
         <h5 className="head-badge card-badge warning">New</h5>
       </div>
       <div className="prod-details">
