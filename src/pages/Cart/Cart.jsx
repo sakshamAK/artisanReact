@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext/AuthContext";
 import { useCart } from "../../contexts/CartContext/CartContext";
 import {
@@ -181,7 +181,7 @@ export const Cart = () => {
               <h2>Total</h2>
               <h2>Rs. {checkoutPrice}</h2>
             </div>
-            <button className={`${styles.checkoutBtn} btn primary`}>Checkout</button>
+            <Link className={mycart.length !== 0 ? `${styles.checkoutBtn} btn primary` : `${styles.checkoutDisabled} btn primary`} to="/checkout">Checkout</Link>
           </div>
         </div>
       </div>

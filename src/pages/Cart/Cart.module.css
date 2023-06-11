@@ -131,6 +131,14 @@
     gap: 4rem;
 }
 
+.checkoutBtn, .checkoutDisabled {
+    text-align: center;
+}
+
+.checkoutDisabled {
+    pointer-events: none;
+    background-color: lightgray;
+}
 
 @media screen and (max-width: 910px) {
     .checkoutBtn {

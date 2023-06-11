@@ -8,3 +8,4 @@ export { Searchbar } from "./Searchbar/Searchbar"
 export { Wishlist } from "./Wishlist/Wishlist"
 export { PageNotFound } from "./PageNotFound/PageNotFound"
 export { SingleProductPage } from "./SingleProductPage/SingleProductPage";
+export { Checkout } from "./Checkout/Checkout";

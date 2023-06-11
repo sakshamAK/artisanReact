@@ -11,6 +11,7 @@ import {
   Searchbar,
   PageNotFound,
   SingleProductPage,
+  Checkout
 } from "./pages/";
 import "./App.css";
 import Mockman from "mockman-js";
@@ -33,6 +34,7 @@ function App() {
 
         <Route element={<PrivateRoute />}>
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/wishlist" element={<Wishlist />} />
         </Route>
       </Routes>

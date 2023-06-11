@@ -19,19 +19,20 @@
     position: relative;
 }
 
-.formContainer input, .formContainer label{
+.formContainer input,
+.formContainer label {
     font-size: 1rem;
 }
 
-.formContainer input[type = "submit"] {
+.formContainer input[type="submit"] {
     font-size: 1.3rem;
 }
 
-.formContainer input[value = "Sign In"] {
+.formContainer input[value="Sign In"] {
     margin-top: 3rem;
 }
 
-.forgotPassword{
+.forgotPassword {
     position: absolute;
     right: 0;
     bottom: -1.2rem;
@@ -49,7 +50,7 @@
     padding: 4rem;
     width: 40%;
     justify-content: flex-start;
-    height: 40%;
+    /* height: 40%; */
     gap: 2rem;
     font-size: 1.5rem;
 }
@@ -64,6 +65,52 @@
     top: 1.7rem;
     cursor: pointer;
     user-select: none;
+}
+
+.addressManagement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding: 2rem;
+    font-size: 1rem;
+    /* height: 25rem; */
+    /* max-height: 25rem; */
+    /* overflow-y: scroll; */
+}
+
+.addressManagement h2 {
+    margin-block-end: 2rem;
+}
+
+.btn-group {
+    margin-block: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-group-last {
+    margin-block-start: 1rem;
+}
+
+.add-new-address {
+    background: white;
+    position: absolute;
+    padding: 2rem;
+    border: 1px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+}
+
+.add-new-address form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.add-new-address form h2 {
+    align-self: center;
 }
 
 @media screen and (max-width: 745px) {

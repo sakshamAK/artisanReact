@@ -1,4 +1,4 @@
-import { ADD_TO_CART, ADD_TO_WISHLIST, DECREASE_ITEM_QUANTITY, REMOVE_FROM_CART, REMOVE_FROM_WISHLIST } from "./action-types";
+import { ADD_TO_CART, ADD_TO_WISHLIST, DECREASE_ITEM_QUANTITY, REMOVE_ALL_ITEMS_FROM_CART, REMOVE_FROM_CART, REMOVE_FROM_WISHLIST } from "./action-types";
 
 export const addToCart = payload => ({
     type: ADD_TO_CART,
@@ -7,6 +7,11 @@ export const addToCart = payload => ({
 
 export const removeFromCart = payload => ({
     type: REMOVE_FROM_CART,
+    payload
+})
+
+export const removeAllItemsFromCart = (payload) => ({
+    type: REMOVE_ALL_ITEMS_FROM_CART,
     payload
 })
 
