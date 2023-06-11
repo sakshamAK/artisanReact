@@ -129,10 +129,10 @@ export const SignIn = () => {
               {
                 myAddress?.map((item) => {
                   const { name, house, city, state, country, postalCode, mobile } = item;
-                  return (<li>
+                  return (<li className={`${styles["li-address"]}`}>
                     <p>{name}</p>
                     <p>#{house}, {city}, {state}, {country} - {postalCode} <br /> Mobile number: {mobile}</p>
-                    {<div className={`${styles["btn-group"]}`}>
+                    {name !== "Adarsh Balika" && <div className={`${styles["btn-group"]}`}>
                       <button className="btn primary" onClick = {() => editAddress()}>edit</button>
                       <button className="btn warning" onClick={() => removeAddress(item)}>Remove</button>
                     </div>}
@@ -144,6 +144,7 @@ export const SignIn = () => {
             <div className={`${styles["btn-group-last"]}`}>
               <button className={myAddress.length > 2 ? "btn secondary" : "btn primary"} onClick={() => setIsAddress(p => !p)} disabled={myAddress.length > 2}>Add new address</button>
               <div className={`${styles["add-new-address"]}`} style={{ display: isAddress ? "block" : "none" }}>
+              <button className="btn secondary" onClick={() => setIsAddress(false)}>Close</button>
                 <form ref={formData}>
                   <h2>Add New Address</h2>
                   <div className="input-grp">
