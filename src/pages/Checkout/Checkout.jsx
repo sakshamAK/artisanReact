@@ -33,7 +33,7 @@ export const Checkout = () => {
                         {!payment && <h1>Select Address</h1>}
                         {
                             !payment && myAddress?.map(({ _id, name, house, city, state, country, postalCode, mobile }) => (
-                                <div className={`${style["checkout-address"]}`}>
+                                <label htmlFor={_id} className={`${style["checkout-address"]}`}>
                                     <div className={`${style["checkout-address-radio"]}`}>
                                         <input
                                             type="radio"
@@ -42,10 +42,10 @@ export const Checkout = () => {
                                             name="address"
                                             onClick={() => setSelectedAddress({ _id, name, house, city, state, country, postalCode, mobile })}
                                         />
-                                        <label htmlFor={_id}><h3>{name}</h3></label>
+                                        <h3>{name}</h3>
                                     </div>
                                     <p>#{house}, {city}, {state}, {country} - {postalCode} <br /> Mobile number: {mobile}</p>
-                                </div>
+                                </label>
                             ))
                         }
                     </div>
