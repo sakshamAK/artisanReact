@@ -113,7 +113,6 @@ export const SignIn = () => {
       }
       catch (e) {
         console.log(e);
-        toast.error("Something wrong In getting addresses")
       }
     })();
   }, [])
