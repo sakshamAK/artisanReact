@@ -19,7 +19,7 @@ export const AddressFields = ({ isAddress, setIsAddress, setMyAddress, isEdit, g
     }
 
     const editAddress = async (addressDetails) => {
-        const newAddress = {...addressDetails, _id: getId}
+        const newAddress = { ...addressDetails, _id: getId }
         const { data: { address } } = await axios.post("/api/user/edit/address", { address: newAddress }, { headers: { authorization: localStorage.getItem("token") } });
         setMyAddress(address)
     }
@@ -29,31 +29,29 @@ export const AddressFields = ({ isAddress, setIsAddress, setMyAddress, isEdit, g
         try {
 
             if (dummy === "dummy") {
-                const names = [
-                    'Aarav',
-                    'Diya',
-                    'Kiran',
-                    'Neha',
-                    'Rahul',
-                    'Sneha',
-                    'Vikram',
-                    'New Balak'
-                ];
+                const { name, house, city, state, postalCode, mobile } = {
+                    name: ['Aarav', 'Diya', 'Kiran', 'Neha', 'Rahul', 'Sneha', 'Vikram', 'New Balak'],
+                    house: ["Ganga", "Taj", "Red Fort", "Mysore Palace", "Meenakshi Temple", "Golden Temple", "Gateway of India", "Hawa Mahal"],
+                    city: ["Varanasi", "Agra", "Delhi", "Mysore", "Madurai", "Amritsar", "Mumbai", "Jaipur"],
+                    state: ["Uttar Pradesh", "Andhra Pradesh", "Delhi", "Karnataka", "Tamil Nadu", "Punjab", "Maharashtra", "Rajasthan",],
+                    postalCode: ["221001", "282001", "110006", "570001", "625001", "143006", "400001", "302002"],
+                    mobile: ["9876543210", "9876543211", "9876543212", "9876543213", "9876543214", "9876543215", "9876543216", "9876543217"],
+                };
+
                 var numbers = [];
                 var randomnumber;
                 do {
                     randomnumber = Math.floor(Math.random() * 8)
                 } while (numbers.includes(randomnumber));
                 numbers.push(randomnumber);
-
                 const addressVal = {
-                    name: names[randomnumber],
-                    house: "1245 Main Street",
-                    city: "Delhi",
-                    state: "Delhi",
+                    name: name[randomnumber],
+                    house: house[randomnumber],
+                    city: city[randomnumber],
+                    state: state[randomnumber],
                     country: "India",
-                    postalCode: 110001,
-                    mobile: 7684378546
+                    postalCode: postalCode[randomnumber],
+                    mobile: mobile[randomnumber]
                 }
                 isEdit ? editAddress(addressVal) : addAddress(addressVal);
                 setIsAddress(false)
