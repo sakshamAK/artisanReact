@@ -103,3 +103,50 @@ export const removeAddressHandler = function (schema, request) {
     );
   }
 };
+
+/**
+ * This handler handles adding items to user's Address.
+ * send POST Request at /api/user/address
+ * body contains {product}
+ * */
+
+export const editAddressHandler = function (schema, request) {
+  const userId = requiresAuth.call(this, request);
+  try {
+    if (!userId) {
+      new Response(
+        404,
+        {},
+        {
+          errors: ["The email you entered is not Registered. Not Found error"],
+        }
+      );
+    }
+    let userAddress = schema.users.findBy({ _id: userId }).address;
+    const { address } = JSON.parse(request.requestBody);
+    console.log(address._id, userAddress);
+    if (!userAddress.find((item) => item._id === address._id))
+      throw new Error("Address does not exist");
+
+    let existingAddress = userAddress.find((item) => item._id === address._id)
+    const getIndex = userAddress.findIndex((item) => item._id === address._id)
+
+    existingAddress = {
+      ...existingAddress,
+      ...address,
+    };
+
+    userAddress[getIndex] = existingAddress;
+
+    this.db.users.update({ _id: userId }, { address: userAddress });
+    return new Response(201, {}, { address: [...this.db.addresses, ...userAddress] });
+  } catch (error) {
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};

@@ -26,7 +26,7 @@ import {
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
-import { addAddressHandler, getAddressHandler, removeAddressHandler } from "./backend/controllers/AddressController";
+import { addAddressHandler, editAddressHandler, getAddressHandler, removeAddressHandler } from "./backend/controllers/AddressController";
 import { addresses } from "./backend/db/addresses";
 
 export function makeServer({ environment = "development" } = {}) {
@@ -99,6 +99,7 @@ export function makeServer({ environment = "development" } = {}) {
       // address routes (private)
       this.get("/user/address", getAddressHandler.bind(this));
       this.post("/user/address", addAddressHandler.bind(this));
+      this.post("/user/edit/address", editAddressHandler.bind(this));
       this.delete("/user/address", removeAddressHandler.bind(this));
     },
   });
