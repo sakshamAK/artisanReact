@@ -40,6 +40,7 @@ export const Checkout = () => {
                                             id={_id}
                                             value={selectedAddress?._id}
                                             name="address"
+                                            checked = {selectedAddress?.name === name}
                                             onClick={() => setSelectedAddress({ _id, name, house, city, state, country, postalCode, mobile })}
                                         />
                                         <h3>{name}</h3>

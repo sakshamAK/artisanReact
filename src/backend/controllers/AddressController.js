@@ -25,7 +25,7 @@ export const getAddressHandler = function (schema, request) {
     );
   }
   const userAddress = schema.users.findBy({ _id: userId }).address;
-  return new Response(200, {}, { address: [...this.db.addresses, ...userAddress] });
+  return new Response(200, {}, { address: userAddress });
 };
 
 /**
@@ -58,7 +58,7 @@ export const addAddressHandler = function (schema, request) {
       updatedAt: formatDate(),
     });
     this.db.users.update({ _id: userId }, { address: userAddress });
-    return new Response(201, {}, { address: [...this.db.addresses, ...userAddress] });
+    return new Response(201, {}, { address: userAddress });
   } catch (error) {
     return new Response(
       500,
@@ -92,7 +92,7 @@ export const removeAddressHandler = function (schema, request) {
     const { address } = JSON.parse(request.requestBody);
     userAddress = userAddress.filter((item) => item._id !== address._id);
     this.db.users.update({ _id: userId }, { address: userAddress });
-    return new Response(200, {}, { address: [...this.db.addresses, ...userAddress] });
+    return new Response(200, {}, { address: userAddress });
   } catch (error) {
     return new Response(
       500,
@@ -139,7 +139,7 @@ export const editAddressHandler = function (schema, request) {
     userAddress[getIndex] = existingAddress;
 
     this.db.users.update({ _id: userId }, { address: userAddress });
-    return new Response(201, {}, { address: [...this.db.addresses, ...userAddress] });
+    return new Response(201, {}, { address: userAddress });
   } catch (error) {
     return new Response(
       500,

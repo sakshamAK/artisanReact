@@ -46,6 +46,15 @@ export const addItemToCartHandler = function (schema, request) {
     }
     const userCart = schema.users.findBy({ _id: userId }).cart;
     const { product } = JSON.parse(request.requestBody);
+    if (JSON.stringify(product) === JSON.stringify({})) {
+      new Response(
+        404,
+        {},
+        {
+          errors: ["Product object empty"],
+        }
+      );
+    }
     userCart.push({
       ...product,
       createdAt: formatDate(),

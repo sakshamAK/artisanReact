@@ -13,15 +13,23 @@ export const AddressFields = ({ isAddress, setIsAddress, setMyAddress, isEdit, g
 
     const addAddress = async (addressDetails) => {
         const newAddress = { ...addressDetails, _id: uuid() }
-        console.log(newAddress);
-        const { data: { address } } = await axios.post("/api/user/address", { address: newAddress }, { headers: { authorization: localStorage.getItem("token") } });
-        setMyAddress(address)
+        try {
+            const { data: { address } } = await axios.post("/api/user/address", { address: newAddress }, { headers: { authorization: localStorage.getItem("token") } });
+            setMyAddress(address)
+        } catch(e) {
+            console.log(e)
+        }
     }
 
     const editAddress = async (addressDetails) => {
         const newAddress = { ...addressDetails, _id: getId }
-        const { data: { address } } = await axios.post("/api/user/edit/address", { address: newAddress }, { headers: { authorization: localStorage.getItem("token") } });
-        setMyAddress(address)
+        try {
+            const { data: { address } } = await axios.post("/api/user/edit/address", { address: newAddress }, { headers: { authorization: localStorage.getItem("token") } });
+            setMyAddress(address)
+        }
+        catch(e) {
+            console.log(e);
+        }
     }
 
     const addNewAddress = (e, dummy) => {
